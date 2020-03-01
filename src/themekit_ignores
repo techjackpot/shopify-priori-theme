@@ -1,0 +1,10 @@
+# $PROJECT_DIR/themekit_ignores
+# plain file names
+src/config/settings_data.json
+
+# globs
+*.png
+*.jpg
+
+# regex
+/\.(txt|gif|bat)$/

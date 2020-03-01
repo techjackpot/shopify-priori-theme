@@ -1,4 +1,11 @@
 development:
-  password: 58df27bda84d131a0d1666597239052e
-  theme_id: "80932733027"
-  store: prioriskincare.myshopify.com
+  password: ${SHOPIFY_PASSWORD}
+  theme_id: ${SHOPIFY_DEV_THEMEID}
+  store: ${SHOPIFY_STORE}
+  directory: src
+production:
+  password: ${SHOPIFY_PASSWORD}
+  theme_id: ${SHOPIFY_PROD_THEMEID}
+  store: ${SHOPIFY_STORE}
+  directory: src
+  timeout: 180s
