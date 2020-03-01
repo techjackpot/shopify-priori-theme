@@ -1,0 +1,56 @@
+<section class="content-stripe">
+  <div class="wrapper">
+    <h2 style="margin-bottom:0px;" class="uppercase-title">{{ section.settings.heading }}</h2>
+		{% unless section.settings.intro == blank %}
+
+      {{ section.settings.intro }}
+
+    {% endunless %}
+
+    	{{ section.settings.embed }}
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Instagram"
+  },
+  "class": "index-section index-section--flush",
+  "settings": [
+		{
+      "type": "text",
+      "id": "heading",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Priori on Instagram"
+      }
+    },
+		{
+      "type": "richtext",
+      "id": "intro",
+      "label": {
+        "en": "Introduction"
+      },
+      "default": {
+        "en": "<p>Introductory paragraph</p>"
+      }
+    },
+		{
+		 "type": "html",
+		 "id": "embed",
+		 "label": "Paste Your Social Feed Embed Code",
+		 "default": "<div><p>Embed code HTML</p></div>"
+		}
+  ],
+  "presets": [
+    {
+      "name": "Instagram",
+      "category": "Homepage sections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,95 @@
+<ul class="site-nav__dropdown big-ol-dropdown-thang" style="display:none;">
+  <li>
+    <div class="dropdown-overlay wrapper">
+      <a href="#" class="dropdown-close">&times;</a>
+      <div class="dropdown-tabs">
+        <a href="#adaptive-core-nav" class="active">
+          <span>/01</span>
+          Core
+        </a>
+        <a href="#superceuticals-nav">
+          <span>/02</span>
+          Superceuticals&trade;
+        </a>
+        <a href="#priori-natural-nav">
+          <span>/03</span>
+          Natural
+        </a>
+        <a class="see-all" href="/collections/all">
+          See All Products
+        </a>
+      </div>
+      <div class="grid">
+        <div class="grid__item large--two-fifths">
+          <div class="dropdown-products">
+            <div id="adaptive-core-nav" class="active">
+              {% for product in collections.adaptive-core-formulas.products limit:6 %}
+                <a href="{{ product.url | within: collection }}">
+                  {{ product.title }}
+                </a>
+              {% endfor %}
+							<a href="/collections/adaptive-core">
+								<span class="small">See All Adaptive Core</span>
+							</a>
+            </div>
+            <div id="superceuticals-nav" style="display:none;">
+              {% for product in collections.adaptive-superceutical-formulas.products limit:6 %}
+                <a href="{{ product.url | within: collection }}">
+                  {{ product.title }}
+                </a>
+              {% endfor %}
+							<a href="/collections/adaptive-superceuticals">
+								<span class="small">See All Adaptive Superceuticals</span>
+							</a>
+            </div>
+            <div id="priori-natural-nav" style="display:none;">
+              {% for product in collections.adaptive-natural-formulas.products limit:6 %}
+                <a href="{{ product.url | within: collection }}">
+                  {{ product.title }}
+                </a>
+              {% endfor %}
+							<a href="/collections/adaptive-natural">
+								<span class="small">See All Adaptive Naturals</span>
+							</a>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item large--three-fifths">
+          <div class="dropdown-cycler grid">
+            <div class="grid__item large--one-half">
+              <div class="cycle-image-container">
+                <img class="cycle-image-placeholder" src="https://cdn.shopify.com/s/files/1/2697/5218/products/50mL_CARTON_DNAfx221_large.jpg?v=1516345782" alt="DNA fx221">
+                <img class="cycle-image" src="https://cdn.shopify.com/s/files/1/2697/5218/products/50mL_CARTON_DNAfx221_large.jpg?v=1516345782" alt="DNA fx221">
+                <img class="cycle-image" src="https://cdn.shopify.com/s/files/1/2697/5218/products/15mL_CARTON_LCAfx130_large.jpg?v=1516345200" alt="LCA fx130">
+              </div>
+              <div class="cycle-span-container">
+                <span class="cycle-span">DNA fx221 Recovery Serum</span>
+                <span class="cycle-span">LCA fx130 Eye Serum</span>
+              </div>
+            </div>
+            <div class="grid__item large--one-half no-gutter">
+              <div class="prevnext">
+                <span class="prev">&lt;</span>
+                <span class="next">&gt;</span>
+              </div>
+              <div class="dropdown-cycle-container">
+                <div class="cycle-content">
+                  <span>fx221</span>
+                  <h3>Recovery Serum</h3>
+                  <span>An advanced, water-based formula that restores and nourishes at a cellular level.</span>
+                  <a class="btn" href="/products/dna-fx221-recovery-serum">See Item</a>
+                </div>
+                <div class="cycle-content">
+                  <span>fx130</span>
+                  <h3>Eye Serum</h3>
+                  <span>A light textured balm delivers instant, but lasting results.</span>
+                  <a class="btn" href="/products/lca-fx130-eye-serum">See Item</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

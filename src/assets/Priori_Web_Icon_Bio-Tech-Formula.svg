@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.15 157.86">
+  <defs>
+    <style>
+      .a {
+        fill: #fff;
+        stroke: #6d6e70;
+        stroke-miterlimit: 10;
+      }
+
+      .a, .b {
+        stroke-width: 3px;
+      }
+
+      .b {
+        fill: none;
+        stroke: gray;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <title>Priori_Web_Icon_Bio-Tech-Formula</title>
+  <g>
+    <path class="a" d="M33.38,140.61c0-.31,0-.62,0-.93a46,46,0,0,1,92,.93"/>
+    <path class="b" d="M143.07,122.32a78.44,78.44,0,0,1-9.39,11.36A77.35,77.35,0,1,1,149,46"/>
+    <circle class="a" cx="78.55" cy="55.98" r="24.07"/>
+    <line class="b" x1="154.98" y1="64.55" x2="154.98" y2="101.89"/>
+    <line class="b" x1="136.31" y1="83.22" x2="173.65" y2="83.22"/>
+  </g>
+</svg>

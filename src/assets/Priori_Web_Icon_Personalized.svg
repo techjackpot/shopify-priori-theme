@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134.97 165.01">
+  <defs>
+    <style>
+      .a {
+        fill: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .a, .b {
+        stroke: #6d6e70;
+        stroke-width: 3px;
+      }
+
+      .b {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <title>Priori_Web_Icon_Personalized</title>
+  <g>
+    <circle class="a" cx="98.07" cy="139.9" r="23.6"/>
+    <circle class="a" cx="114.97" cy="20" r="18.5"/>
+    <circle class="a" cx="44.47" cy="63.41" r="42.97"/>
+    <path class="b" d="M25.78,76.28a22.7,22.7,0,0,1,8.6-33.2"/>
+    <line class="a" x1="100.12" y1="29.5" x2="81.35" y2="40.85"/>
+    <line class="a" x1="85.93" y1="119.88" x2="68.26" y2="98.86"/>
+  </g>
+</svg>

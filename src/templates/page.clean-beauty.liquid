@@ -1,0 +1,361 @@
+<!-- /templates/page.clean-beauty.liquid -->
+<div class="banner banner--responsive">
+  <img class="banner-img large--show medium-down--hide" src="{{ 'priori-naturals-family-banner.jpg' | asset_img_url: '2400x' }}" alt="Naturally Adaptive Skincare Has Arrived">
+	<div class="large--one-half">
+    <div class="banner-content">
+			<img class="large--hide medium-down--show"src="{{ 'priori-naturals-family.jpg' | asset_url }}" alt="Naturally Adaptive Skincare Has Arrived">
+    </div>
+	</div>
+	<div class="large--one-half">
+    <div class="banner-txt txt-box">
+			<h3 class="text--uppercase">Naturally Adaptive Skincare Has Arrived</h3>
+      <h1>Introducing TTC: The Triple Turmeric Complex</h1>
+			<p style="font-size:18px;">We’re committed to creating products that work with your skin’s needs, whatever they may be. That’s the core of our Adaptive Skincare technology. Now, we’ve taken that commitment one step further with the creation of our new turmeric-based TTC line. Listed as Allure's top green beauty innovation for the year, it’s Naturally Clean, Adaptive Skincare.</p>
+			<a href="#shop-clean-beauty" class="btn btn--secondary btn--large btn--arrow">Shop Clean Beauty <span>→</span></a>
+    </div>
+	</div>
+</div><!-- .banner -->
+
+<section class="clean-ingredients features">
+	<div class="complexes content-stripe">
+		<h2 class="text-center uppercase-title">Clean Ingredients, Powerful Results</h2>
+		<header>
+			<img class="medium-down--hide" src="{{ 'priori-naturals-outdoor.jpg' | asset_url }}" alt="Priori Natural Outdoor">
+			<img class="large--hide medium-down--show" src="{{ 'priori-naturals-outdoor-tall.jpg' | asset_url }}" alt="Priori Natural Outdoor">
+			<div class="txt-box">
+				<h2>All The Good With None Of The Bad</h2>
+				<p>Your skin shouldn’t have to compromise. Priori Clean Beauty products are not only cruelty-free and fragrance-free, but are also formulated without harsh chemicals that can cause skin irritations. It’s the safe, natural choice for your skin and the environment.</p>
+			</div>
+		</header>
+	</div>
+</section>
+
+<div class="img-wrap">
+  <img src="https://cdn.shopify.com/s/files/1/2697/5218/files/Natural_Routine_AM-PM.jpg?2330" alt="Daily Natural Skincare Routine Day and Night">
+</div>
+
+{% if collections.naturals.products.size > 0 %}
+	<section id="shop-clean-beauty" class="content-stripe">
+		<ul class="grid">
+			{% for product in collections.naturals.products %}
+
+  <li style="margin-bottom:50px;" class="grid__item large--one-third">
+	<a class="shop-now" href="{{ product.url }}">
+
+		{% comment %}Using product name/slug as base for images being pulled in from asset folder, images must be named after the slug, will break if product title changes {% endcomment %}
+
+		{% capture product_image_url %} {{ product.url | remove: "/products/" | append: '.jpg' }} {% endcapture %}
+		{% capture source %} {{ product.title | handleize | append: '.jpg' }}{% endcapture %}
+
+
+		<img src="{{ source | asset_url | remove: '%20' }}" alt="">
+
+		{% comment %} Dynamic images from product listing
+		{% if product.images.size == 1 %}
+			<img style="margin-bottom:15px;" src="{{  product.images[0] | img_url: '1200x' }}" alt="{{ product.title | escape  }}">
+		{% else %}
+			<img   style="margin-bottom:15px;" src="{{  product.images[1] | img_url: '1200x' }}" alt="{{ product.title | escape  }}"/>
+		{% endif %}
+		{% endcomment %}
+
+  	<h3 style="margin-bottom:0px;">{{ product.title | replace_first:"-","</h3><h2>"  }}</h2>
+	</a>
+	<form action="/cart/add" method="post" id="product-form-{{ product.id }}">
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+  <div>
+    <button class="btn btn--arrow" type="submit" name="add">Add to cart <span>→</span></button>
+  </div>
+</form>
+  </li>
+
+{% endfor %}
+</ul>
+</section>
+
+{% endif %}
+{% comment %} static product section
+<section id="shop-clean-beauty" class="content-stripe">
+  <div class="wrapper">
+    <ul class="grid">
+      <li style="margin-bottom:50px;" class="grid__item large--one-third">
+        <img style="margin-bottom:30px;" src="{{ 'priori-naturals-310.jpg' | asset_url }}" alt="">
+
+        <h3 style="margin-bottom:0px;">TTC fx310</h3>
+				<h2>Naturally Enriched Cleanser</h2>
+				<a href="#" class="btn btn--arrow">Add to Cart<span>→</span></a>
+      </li>
+      <li style="margin-bottom:50px;" class="grid__item large--one-third">
+        <img style="margin-bottom:30px;" src="{{ 'priori-naturals-320.jpg' | asset_url }}" alt="">
+
+        <h3 style="margin-bottom:0px;">TTC fx320</h3>
+				<h2>Illumination Treatment</h2>
+				<a href="#" class="btn btn--arrow">Add to Cart<span>→</span></a>
+      </li>
+      <li style="margin-bottom:50px;" class="grid__item large--one-third">
+        <img style="margin-bottom:30px;" src="{{ 'priori-naturals-330.jpg' | asset_url }}" alt="">
+
+        <h3 style="margin-bottom:0px;">TTC fx330</h3>
+				<h2>Tightening Eye Serum</h2>
+				<a href="#" class="btn btn--arrow">Add to Cart<span>→</span></a>
+      </li>
+      <li style="margin-bottom:50px;" class="grid__item large--one-third">
+        <img style="margin-bottom:30px;" src="{{ 'priori-naturals-340.jpg' | asset_url }}" alt="">
+
+        <h3 style="margin-bottom:0px;">TTC fx340</h3>
+				<h2>Skin Restore Cream</h2>
+				<a href="#" class="btn btn--arrow">Add to Cart<span>→</span></a>
+      </li>
+      <li style="margin-bottom:50px;" class="grid__item large--one-third">
+        <img style="margin-bottom:30px;" src="{{ 'priori-naturals-341.jpg' | asset_url }}" alt="">
+
+        <h3 style="margin-bottom:0px;">TTC fx341</h3>
+				<h2>Luxuriant Cream</h2>
+				<a href="#" class="btn btn--arrow">Add to Cart<span>→</span></a>
+      </li>
+      <li style="margin-bottom:50px;" class="grid__item large--one-third">
+        <img style="margin-bottom:30px;" src="{{ 'priori-naturals-360.jpg' | asset_url }}" alt="">
+
+        <h3 style="margin-bottom:0px;">TTC fx360</h3>
+				<h2>Natural Enzyme Peel Masque</h2>
+				<a href="#" class="btn btn--arrow">Add to Cart<span>→</span></a>
+      </li>
+
+    </ul>
+  </div><!-- .wrapper -->
+</section>
+{% endcomment %}
+
+<section class="features-stripe features-stripe--small content-stripe">
+	<div class="wrapper">
+		<h2 class="uppercase-title">Multifunctional Adaptive Results</h2>
+	</div>
+
+	<h3 style="margin-bottom:50px;" class="light-title">Our TTC line features a highly potent natural compound made with three types of colorless turmeric root.<br> Mixed with green tea, grape seed, and licorice extract, these formulas provide a powerful multifunctional result. </h3>
+
+	<div class="wrapper">
+		<ul class="features-blocks features-small grid">
+		  <li class="grid__item large--one-third">
+		    <img style="margin-bottom:25px;" src="{{ 'priori-web-icon-antioxidant-animated.svg' | asset_url }}" alt="Potent Antioxidants">
+				<h2 class="light-title">Potent Antioxidants</h2>
+		  </li>
+
+		  <li class="grid__item large--one-third">
+		    <img style="margin-bottom:25px;" src="{{ 'priori-web-icon-anti-inflammatory-animated.svg' | asset_url }}" alt="Anti-Inflammatory Ingredients">
+				<h2 class="light-title">Anti-Inflammatory Ingredients</h2>
+		  </li>
+
+		  <li class="grid__item large--one-third">
+		    <img style="margin-bottom:25px;" src="{{ 'priori-web-icon-brightening-animated.svg' | asset_url }}" alt="Brightening Results">
+				<h2 class="light-title">Brightening Results</h2>
+		  </li>
+		</ul>
+	</div><!-- .wrapper -->
+</section>
+
+
+
+<section class="complexes">
+	<div class="grid">
+		<div class="grid__item large--two-thirds">
+			<ul class="list-complexes">
+				<li class="flex--half complex">
+				  	<h2>Turmeric Root</h2>
+				  	<p>The power of our TTC line lies in turmeric’s main active, curcumin. Curcumin is known to regulate collagen and promote wound-healing. The versatile active is also full of antioxidant, skin brightening, and anti-inflammatory properties. </p>
+				</li>
+
+				<li class="flex--half complex">
+				  	<h2>Green Tea</h2>
+
+				  	<p>Green tea is an antioxidant powerhouse, containing vitamins B, C, E, catechins, and epicatechin, to name a few. This combination of potent actives gives tea its anti-inflammatory and antioxidant properties, great for calming the skin.</p>
+				</li>
+
+
+				<li class="flex--half complex">
+				  	<h2>Grape Seed</h2>
+
+				  	<p>Containing polyphenols and flavonoids, two highly potent antioxidants, grape seed extract helps the skin reduce free-radical damage. Grape seed extract also contains wound-healing properties, helping skin recover from acne scarring and hyper-pigmentation.</p>
+				</li>
+
+				<li class="flex--half complex">
+				  	<h2>Licorice Root</h2>
+
+				  	<p>Licorice extract is a powerful ingredient, known to reduce the appearance of dark under-eye circles, discoloration and age spots. It’s active ingredient, glabridin helps ease inflammation, firm and tighten, and brighten the overall appearance of skin.</p>
+				</li>
+			</ul>
+		</div>
+		<div class="grid__item large--one-third">
+			<ul class="list-complexes">
+				<li class="flex complex complex--tall is-active made-without">
+				  	<h2>Made Without</h2><br>
+						<h3>✗ Sulfates</h3>
+						<h3>✗ SLS and SLES</h3>
+						<h3>✗ Parabens</h3>
+						<h3>✗ Formaldehyde</h3>
+						<h3>✗ Phthalates</h3>
+						<h3>✗ Mineral Oil</h3>
+						<h3>✗ Coal Tar</h3>
+						<h3>✗ Triclosan</h3>
+						<h3>✗ Triclocarban</h3>
+					</h3>
+				</li>
+			</ul>
+	</div>
+</section>
+
+<!--
+<section class="featured-products">
+	<div style="background-color:#c5e9f1; padding: 100px 0px 100px 0px;" class="featured-product">
+		<h2 style="margin-bottom: 50px;" class="text-center">TTC fx 310 <br>Naturally Enriched Cleanser</h2>
+		<div class="banner banner--responsive">
+			<div class="grid__item one--third">
+				<div class="banner-txt">
+					<h3 class="text--gray text--uppercase">Function</h3>
+					<p>Serum / Treatment</p>
+				</div>
+			</div>
+			<div class="grid__item one--third">
+				<div class="banner-content">
+					<img style="max-height:600px;" src="{{ 'priori-naturals-310-alpha.png' | asset_url }}" alt="Priori Naturals - fx310">
+				</div>
+			</div>
+			<div class="grid__item one--third">
+				<div class="banner-txt">
+					<h3>Natural, gentle and designed to reduce the appearance of uneven tones, fine lines, and sun spots. The Illumination Treatment adapts to your skin and brightens dull, discolored skin resulting in a radiant complexion.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+ -->
+
+
+<section class="carousel-stripe content-stripe">
+	<div class="featured-products-carousel">
+		<div class="title-carousel">
+			<div class="cycle-content cycle-content--310">
+				<h2><span class="text--small text--uppercase">TTC fx 310</span> <br>Naturally Enriched Cleanser</h2>
+			</div>
+			<div class="cycle-content cycle-content--320">
+				<h2><span class="text--small text--uppercase">TTC fx 320</span> <br>Illumination Treatment</h2>
+			</div>
+			<div class="cycle-content cycle-content--330">
+				<h2><span class="text--small text--uppercase">TTC fx 330</span> <br>Tightening Eye Serum</h2>
+			</div>
+			<div class="cycle-content cycle-content--340">
+				<h2><span class="text--small text--uppercase">TTC fx 340</span> <br>Skin Restore Cream</h2>
+			</div>
+			<div class="cycle-content cycle-content--341">
+				<h2><span class="text--small text--uppercase">TTC fx 341</span> <br>Luxuriant Cream</h2>
+			</div>
+			<div class="cycle-content cycle-content--360">
+				<h2><span class="text--small text--uppercase">TTC fx 360</span> <br>Natural Enzyme Peel Masque</h2>
+			</div>
+
+
+		</div><!-- .title-carousel -->
+
+		<div class="products-carousel">
+
+			<div class="cycle-content cycle-content--310">
+				<div class="grid">
+					<div class="product-image-container grid__item large--one-half">
+						<img class="product-image" src="{{ 'priori-naturals-310-alpha.png' | asset_url }}" alt="Priori Naturals - fx310">
+					</div>
+
+					<div class="product-information grid__item large--one-third">
+						<h4 class="text--gray text--uppercase">Function</h4>
+						<h2>Cleanse</h2>
+						<p>An all-natural cleansing product formulated to cleanse thoroughly without drying. Its powerful, natural ingredients provide healing properties that soothe and hydrate your skin, leaving it soft and revitalized.</p>
+						<a href="/products/ttc-fx310-naturally-enriched-cleanser" class="btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="cycle-content cycle-content--320">
+				<div class="grid">
+					<div class="product-image-container grid__item large--one-half">
+						<img class="product-image" src="{{ 'priori-naturals-320-alpha.png' | asset_url }}" alt="Priori Naturals - fx310">
+					</div>
+
+					<div class="product-information grid__item large--one-third">
+						<h4 class="text--gray text--uppercase">Function</h4>
+						<h2>Serum / Treatment</h2>
+						<p>Natural, gentle, and designed to reduce the appearance of uneven tones, fine lines, and sun spots. The Illumination Treatment adapts to your skin and brightens dull, discolored skin resulting in a radiant complexion.</p>
+						<a href="/products/ttc-fx320-illumination-treatment" class="btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="cycle-content cycle-content--330">
+				<div class="grid">
+
+					<div class="product-image-container grid__item large--one-half">
+						<img class="product-image" src="{{ 'priori-naturals-330-alpha.png' | asset_url }}" alt="Priori Naturals - fx310">
+					</div>
+
+					<div class="product-information grid__item large--one-third">
+						<h4 class="text--gray text--uppercase">Function</h4>
+						<h2>Eye Care</h2>
+						<p>A light, gel-based serum formulated to adapt to your specific eye concerns, reducing puffiness and dark spots found around the delicate eye area, while simultaneously hydrating and cooling.</p>
+						<a href="/products/ttc-fx330-tightening-eye-serum" class="btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="cycle-content cycle-content--340">
+				<div class="grid">
+					<div class="product-image-container grid__item large--one-half">
+						<img class="product-image" src="{{ 'priori-naturals-340-alpha.png' | asset_url }}" alt="Priori Naturals - fx310">
+					</div>
+
+					<div class="product-information grid__item large--one-third">
+						<h4 class="text--gray text--uppercase">Function</h4>
+						<h2>Hydrate / Moisturize</h2>
+						<p>Rich in antioxidants, this lightweight cream works to protect from environmental elements, while rejuvenating dehydrated skin and associated fine lines. The result is 24-hour, all-natural protection.</p>
+						<a href="/products/ttc-fx340-skin-restore-cream" class="btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="cycle-content cycle-content--341">
+				<div class="grid">
+
+					<div class="product-image-container grid__item large--one-half">
+						<img class="product-image" src="{{ 'priori-naturals-341-alpha.png' | asset_url }}" alt="Priori Naturals - fx310">
+					</div>
+
+					<div class="product-information grid__item large--one-third">
+						<h4 class="text--gray text--uppercase">Function</h4>
+						<h2>Hydrate / Moisturize</h2>
+						<p>This silky rich, natural cream features argan oil, sunflower seed, and olive leaf to repair your skin and provide ultimate radiance. The Luxuriant Cream helps fight negative effects of free radicals, offering protection and correction. </p>
+						<a href="/products/ttc-fx341-luxuriant-cream" class="btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="cycle-content cycle-content--360">
+				<div class="grid">
+
+					<div class="product-image-container grid__item large--one-half">
+						<img class="product-image" src="{{ 'priori-naturals-360-alpha.png' | asset_url }}" alt="Priori Naturals - fx310">
+					</div>
+
+					<div class="product-information grid__item large--one-third">
+						<h4 class="text--gray text--uppercase">Function</h4>
+						<h2>Face / Body Care</h2>
+						<p>The ultimate adaptive treatment. This enzyme-based skin peel offers dual action, treating dead skin cells, comedones, blackheads, and acne, while restoring and deeply hydrating the skin. A unique combination for achieving your ideal skin. </p>
+						<a href="/products/ttc-fx360-natural-enzyme-peel-mask" class="btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- .day-carousel -->
+</section>
+
+
+<section class="instagram-section">
+  <div class="wrapper">
+    <h2 class="text-center">See What People Are Saying About Priori's #NaturallyAdaptive Skincare</h2>
+    <div id="insta-feed"></div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!-- /templates/page-adaptive-skincare.liquid -->
+
+<div class="banner banner-home">
+  <img class="banner-img" src="{{ 'hydrate.gif' | asset_url }}" alt="">
+
+  <div class="wrapper">
+    <div class="banner-txt">
+      <h1>Pass It On... Give $15, Get $15</h1>
+      <p>Create an account and start saving.</p>
+			{% if shop.customer_accounts_enabled %}
+        {% if customer %}
+          <span class="btn btn--arrow">
+            {% if customer.first_name != blank %}
+              {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+              {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+            {% else %}
+              <a href="/account">{{ 'layout.customer.account' | t }}</a>
+            {% endif %}
+          </span>
+        {% else %}
+					<span class="btn btn--arrow">
+					 {{ 'layout.customer.create_account' | t | customer_register_link }}  <span>→</span>
+				 </span>
+				 <span class="btn btn--arrow">
+            {{ 'layout.customer.log_in' | t | customer_login_link }}  <span>→</span>
+      		</span>
+        {% endif %}
+	    {% endif %}
+    </div>
+  </div>
+</div><!-- .banner -->
+
+<section class="instagram-section">
+  <div class="wrapper">
+    <h2>Priori on Instagram</h2>
+    <div id="insta-feed"></div>
+  </div>
+</section>

@@ -1,0 +1,290 @@
+{
+  "current": {
+    "color_primary": "#1a1a1a",
+    "color_secondary": "#bbb",
+    "color_borders": "#e5e5e5",
+    "color_body_bg": "#fff",
+    "color_body_text": "#333333",
+    "color_footer_bg": "#f2f2f2",
+    "color_footer_text": "#636363",
+    "color_footer_social_link": "#bbbbbb",
+    "logo_use_image": true,
+    "main_linklist": "main-menu-v2",
+    "logo_max_width": "100",
+    "favicon_enable": true,
+    "footer_social_enable": true,
+    "logo": "shopify:\/\/shop_images\/logo-stacked.png",
+    "footer_links_1": "footer",
+    "footer_links_2": "footer-adaptive",
+    "md_area": "<div class=\"klaviyo-form-NVgjEh\"><\/div>",
+    "show_payment_icons": false,
+    "cart_notes_enable": true,
+    "cart_vendor_enable": false,
+    "ajax_cart_method": "drawer",
+    "social_twitter_link": "ttps:\/\/twitter.com\/prioriskincare",
+    "social_facebook_link": "https:\/\/www.facebook.com\/PrioriSkincare\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/prioriskincare\/",
+    "checkout_header_image": "shopify:\/\/shop_images\/bottles_2400x1350_47331595-cbbe-43c9-9ee8-ab6b7f732004.jpg",
+    "checkout_use_storefront_logo": true,
+    "checkout_logo_image": "",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#313131",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#ffc600",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#ff6d6d",
+    "footer_newsletter_enable": true,
+    "newsletter_form_action": "https:\/\/prioriskincare.us15.list-manage.com\/subscribe\/post?u=df5eb233e013de9d016ae570a&amp;id=10e7697e51",
+    "newsletter_form_heading": "JOIN THE PRIORI FAMILY",
+    "newsletter_form_desc": "Sign up for our monthly newsletter and stay up to date with Priori skincare science!",
+    "newsletter_subscribe_btn": "Subscribe to the Priori Newsletter",
+    "newsletter_spam_note": "We hate spam too! Don't worry, we'll never share your information",
+    "sections": {
+      "hero": {
+        "type": "hero",
+        "blocks": {
+          "1545115890267": {
+            "type": "slide",
+            "settings": {
+              "show_slide": false,
+              "foreground-image": "shopify:\/\/shop_images\/Priori_Clear_1920x1080_470b5cc4-df6a-4bae-836d-43f1fa44009b.png",
+              "image": "shopify:\/\/shop_images\/ScienceBased_BANNER-1920x1080_FA.jpg",
+              "background_color": "rgba(0,0,0,0)",
+              "opacity": 100,
+              "color": "light",
+              "small-heading": "",
+              "title": "",
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/collections"
+            }
+          },
+          "1545115897570": {
+            "type": "slide",
+            "settings": {
+              "show_slide": false,
+              "foreground-image": "shopify:\/\/shop_images\/Priori_Website_DarkSpotsCOPY-3.png",
+              "image": "shopify:\/\/shop_images\/Priori_Website_DarkSpots_af46ab9b-b4c6-409c-bd79-f095be43fd52.jpg",
+              "background_color": "rgba(0,0,0,0)",
+              "opacity": 100,
+              "color": "light",
+              "small-heading": "",
+              "title": "",
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/collections\/skincare-routine-for-dark-spots"
+            }
+          },
+          "1545112495324": {
+            "type": "slide",
+            "settings": {
+              "show_slide": false,
+              "foreground-image": "shopify:\/\/shop_images\/Priori_Website_MemorialDayV2_a.png",
+              "image": "shopify:\/\/shop_images\/Priori_Website_MemorialDayV2_b.jpg",
+              "background_color": "#ffffff",
+              "opacity": 100,
+              "color": "dark",
+              "small-heading": "",
+              "title": "",
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/collections\/long-weekend-essentials"
+            }
+          },
+          "1581363344158": {
+            "type": "slide",
+            "settings": {
+              "show_slide": true,
+              "foreground-image": "shopify:\/\/shop_images\/Priori_Clear_1920x1080_470b5cc4-df6a-4bae-836d-43f1fa44009b.png",
+              "image": "shopify:\/\/shop_images\/ScienceBased_NEW-IMAGE_BANNER-1920x1080_FA.jpg",
+              "background_color": "#ffffff",
+              "opacity": 100,
+              "color": "light",
+              "small-heading": "",
+              "title": "",
+              "text": "",
+              "button_label": "",
+              "button_link": "shopify:\/\/collections"
+            }
+          }
+        },
+        "block_order": [
+          "1545115890267",
+          "1545115897570",
+          "1545112495324",
+          "1581363344158"
+        ],
+        "settings": {}
+      },
+      "1542041253049": {
+        "type": "features",
+        "disabled": true,
+        "settings": {
+          "background_color": "#ffc600",
+          "heading": "We Are Adaptive Skincare",
+          "intro": "<p>Every one of us is different&mdash;with different skin on a cellular level. That&rsquo;s why our new generation of Priori Skincare products are carefully formulated using the latest technology to recognize your individuality. Priori products provide your skin with exactly what it needs, exactly when you need it.<\/p>",
+          "image_1": "",
+          "heading_1": "Intelligent",
+          "text_1": "Priori communicates with your skin as it adapts to changing environments.",
+          "image_2": "",
+          "heading_2": "Bio-technology",
+          "text_2": "Advanced LCA, Q+SOD and DNA formulas deliver treatment at the cellular level.",
+          "image_3": "",
+          "heading_3": "Real-time",
+          "text_3": "Adaptive Skincare works throughout the day to protect and nourish as your skin needs it."
+        }
+      },
+      "1542041295078": {
+        "type": "priori-formulas",
+        "disabled": true,
+        "settings": {
+          "heading": "Priori Formulas",
+          "intro": "<p>The difference is in the science. Priori’s Core, Superceutical, and Natural Formulas contain advanced complexes that provide everything you need for complete, personalized skincare that's as unique as you are. <\/p>",
+          "button_link": "shopify:\/\/pages\/adaptive-skincare",
+          "button_text": "Explore The Priori Difference",
+          "formula_image_1": "shopify:\/\/shop_images\/priori-adaptive-core-formulas.jpg",
+          "formula_title_1": "Adaptive Core Formulas",
+          "formula_subtitle_1": "Complete skincare with real-time results",
+          "formula_copy_1": "<p>Intelligent products that nourish and protect at the cellular level, giving you the confidence to know your skin will look and feel great, all day long.<\/p>",
+          "formula_collection_1": "adaptive-core-formulas",
+          "formula_button_1": "Shop Core",
+          "formula_image_2": "",
+          "formula_title_2": "Adaptive Superceutical Formulas",
+          "formula_subtitle_2": "Targeted solutions for your ideal skin",
+          "formula_copy_2": "<p>Designed for those with specific skincare requirements, these advanced, targeted solutions deliver real-time corrective benefits as you need them.<\/p>",
+          "formula_collection_2": "adaptive-superceutical-formulas",
+          "formula_button_2": "Shop Superceuticals",
+          "formula_image_3": "",
+          "formula_title_3": "Adaptive Natural Formulas",
+          "formula_subtitle_3": "The First Naturally Clean Adaptive Skincare",
+          "formula_copy_3": "<p>Priori TTC products feature an exclusive, highly potent turmeric-based compound that delivers antioxidant, brightening and anti-inflammatory results.<\/p>",
+          "formula_collection_3": "adaptive-natural-formulas",
+          "formula_button_3": "Shop Naturals"
+        }
+      },
+      "1542041302714": {
+        "type": "instagram",
+        "settings": {
+          "heading": "Priori on Instagram",
+          "intro": "<p>Tag @PrioriSkincare To Be Featured<\/p>",
+          "embed": "<div id=\"insta-feed\"><\/div>"
+        }
+      },
+      "1542309461184": {
+        "type": "product-carousel",
+        "blocks": {
+          "1542309461184-0": {
+            "type": "carousel",
+            "settings": {
+              "carousel": "frontpage"
+            }
+          }
+        },
+        "block_order": [
+          "1542309461184-0"
+        ],
+        "settings": {
+          "heading": "DISCOVER OUR TRAVEL AND TRIAL KITS",
+          "intro": ""
+        }
+      },
+      "1542309981181": {
+        "type": "featured-collections",
+        "settings": {
+          "heading": "",
+          "intro": "",
+          "cat1_url": "shopify:\/\/products\/the-recovery-kit",
+          "cat1_image": "shopify:\/\/shop_images\/Image_from_iOS_4.jpg",
+          "cat1_text": "Recovery On The Go - Travel Kits",
+          "cat1_desc": "",
+          "button_text_1": "SHOP NOW",
+          "cat2_url": "shopify:\/\/collections\/adaptive-natural-formulas",
+          "cat2_image": "shopify:\/\/shop_images\/priori_191002_SC_Turmeric.jpg",
+          "cat2_text": "The Benefits Of Antioxidant-Rich Turmeric",
+          "cat2_desc": "",
+          "button_text_2": "LEARN MORE",
+          "cat3_url": "shopify:\/\/products\/q-sod-fx220-brightening-serum",
+          "cat3_image": "shopify:\/\/shop_images\/Priori_191211_SC_Texture-Text-Overlay_REVIEW_1.jpg",
+          "cat3_text": "Beat Those Winter Blues With Moisture",
+          "cat3_desc": "",
+          "button_text_3": "SHOP NOW"
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {
+          "show_sidebar": true,
+          "collection_sidebar": "shop-sidebar",
+          "show_tags": false
+        }
+      },
+      "1543965156906": {
+        "type": "general-content",
+        "settings": {
+          "background_color": "#ffc600",
+          "color": "dark",
+          "heading": "WE ARE ADAPTIVE SKINCARE",
+          "text": "<p>Multi-Functional Ingredient technology to provide your skin with exactly what it needs. Your skin decides what to take – all day, every day – for its best, most radiant face-first results. <\/p>",
+          "button_label": "EXPLORE THE PRIORI DIFFERENCE",
+          "button_link": "shopify:\/\/pages\/adaptive-skincare"
+        }
+      },
+      "1543965324531": {
+        "type": "general-content-columns",
+        "disabled": true,
+        "settings": {
+          "background_color": "#bbbbbb",
+          "color": "dark",
+          "heading": "A very important heading",
+          "text_left": "<h3>This is a general textarea<\/h3><p>Use this section for any general content by using simple html. <\/p><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/2697\/5218\/t\/31\/assets\/Priori_Web_Icon_Intelligent.svg?4987680567071105797\" alt=\"Priori Skincare - Intelligent\">",
+          "button_label_left": "",
+          "button_link_left": "",
+          "text_right": "<h3>This is a general textarea<\/h3><p>Use this section for any general content by using simple html.<\/p><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/2697\/5218\/t\/31\/assets\/Priori_Web_Icon_Bio-Tech.svg?4987680567071105797\" alt=\"Priori Skincare - Bio-technology\">",
+          "button_label_right": "",
+          "button_link_right": ""
+        }
+      },
+      "product": {
+        "type": "product",
+        "settings": {
+          "show_share_buttons": true
+        }
+      }
+    },
+    "content_for_index": [
+      "1542309981181",
+      "1542309461184",
+      "1542041253049",
+      "1543965156906",
+      "1542041295078",
+      "1543965324531",
+      "1542041302714"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "ajax_cart_method": "drawer",
+      "cart_notes_enable": true,
+      "color_body_bg": "#fff",
+      "color_body_text": "#333333",
+      "color_borders": "#e5e5e5",
+      "color_footer_bg": "#f2f2f2",
+      "color_footer_social_link": "#bbbbbb",
+      "color_footer_text": "#636363",
+      "color_primary": "#1a1a1a",
+      "color_secondary": "#bbb",
+      "favicon_enable": false,
+      "footer_newsletter_enable": true,
+      "footer_social_enable": true,
+      "logo_use_image": false,
+      "social_facebook_link": "",
+      "social_twitter_link": ""
+    }
+  }
+}

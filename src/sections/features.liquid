@@ -1,0 +1,177 @@
+<section class="features content-stripe" style="background-color:{{ section.settings.background_color }};">
+  <div class="wrapper">
+    <h2 class="uppercase-title">{{ section.settings.heading }}</h2>
+
+    {{ section.settings.intro }}
+
+    <ul class="features-blocks grid">
+      <li class="grid__item large--one-third">
+        {% if section.settings.image_1 %}
+        <img src="{{ section.settings.image_1 | img_url:'900x' }}" alt="Priori Skincare - {{ section.settings.heading_1 }}">
+        {% else %}
+        <img src="{{ 'Priori_Web_Icon_Intelligent.svg' | asset_url }}" alt="Priori Skincare - Intelligent">
+        {% endif %}
+
+        <h3>{{ section.settings.heading_1 }}</h3>
+
+        <p>{{ section.settings.text_1 }}</p>
+      </li>
+
+      <li class="grid__item large--one-third">
+        {% if section.settings.image_2 %}
+        <img src="{{ section.settings.image_2 | img_url:'900x' }}" alt="Priori Skincare - {{ section.settings.heading_2 }}">
+        {% else %}
+        <img src="{{ 'Priori_Web_Icon_Bio-Tech.svg' | asset_url }}" alt="Priori Skincare - Bio-technology">
+        {% endif %}
+
+        <h3>{{ section.settings.heading_2 }}</h3>
+
+        <p>{{ section.settings.text_2 }}</p>
+      </li>
+
+      <li class="grid__item large--one-third">
+        {% if section.settings.image_3 %}
+        <img src="{{ section.settings.image_3 | img_url:'900x' }}" alt="Priori Skincare - {{ section.settings.heading_3 }}">
+        {% else %}
+        <img src="{{ 'Priori_Web_Icon_Real-Time.svg' | asset_url }}" alt="Priori Skincare - Real-time">
+        {% endif %}
+
+        <h3>{{ section.settings.heading_3 }}</h3>
+
+        <p>{{ section.settings.text_3 }}</p>
+      </li>
+    </ul>
+  </div><!-- .wrapper -->
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "Introduction & Features"
+  },
+  "class": "index-section index-section--flush",
+  "settings": [
+		{
+			"type": "color",
+			"id": "background_color",
+			"label": "Background Color",
+			"default": "#fff"
+		},
+    {
+      "type": "text",
+      "id": "heading",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "We Are Adaptive Skincare"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": {
+        "en": "Introduction"
+      },
+      "default": {
+        "en": "<p>Introductory paragraph</p>"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": {
+        "en": "Image 1"
+      }
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": {
+        "en": "Heading 1"
+      },
+      "default": {
+        "en": "Feature Heading"
+      }
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": {
+        "en": "Description 1"
+      },
+      "default": {
+        "en": "Short description of this feature"
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": "-"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": {
+        "en": "Image 2"
+      }
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": {
+        "en": "Heading 2"
+      },
+      "default": {
+        "en": "Feature Heading"
+      }
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": {
+        "en": "Description 2"
+      },
+      "default": {
+        "en": "Short description of this feature"
+      }
+    },
+    {
+      "type": "paragraph",
+      "content": "-"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": {
+        "en": "Image 3"
+      }
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "label": {
+        "en": "Heading 3"
+      },
+      "default": {
+        "en": "Feature Heading"
+      }
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": {
+        "en": "Description 3"
+      },
+      "default": {
+        "en": "Short description of this feature"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features",
+      "category": "Homepage sections"
+    }
+  ]
+}
+{% endschema %}

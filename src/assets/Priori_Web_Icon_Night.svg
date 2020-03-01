@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172.95 172.95">
+  <defs>
+    <style>
+      .a, .b {
+        fill: #fff;
+      }
+
+      .a, .b, .c {
+        stroke: #6d6e70;
+        stroke-width: 3px;
+      }
+
+      .a {
+        stroke-miterlimit: 10;
+      }
+
+      .b, .c {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .c {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <title>Priori_Web_Icon_Night</title>
+  <g>
+    <circle class="a" cx="86.47" cy="86.47" r="84.97"/>
+    <circle class="b" cx="47.76" cy="45" r="6"/>
+    <circle class="b" cx="143.89" cy="70.98" r="6"/>
+    <circle class="b" cx="121.01" cy="36.92" r="6"/>
+    <circle class="b" cx="31.16" cy="80.48" r="6"/>
+    <polyline class="c" points="2.98 100.34 57.19 100.34 55.68 100.34"/>
+    <line class="c" x1="113.18" y1="100.34" x2="170.31" y2="100.34"/>
+    <line class="c" x1="31.16" y1="114.2" x2="6.61" y2="114.2"/>
+    <polyline class="c" points="53.6 114.2 55.42 114.2 38.53 114.2"/>
+    <line class="c" x1="142.28" y1="114.2" x2="117.6" y2="114.2"/>
+    <line class="c" x1="165.08" y1="114.2" x2="151.59" y2="114.2"/>
+    <line class="c" x1="57.36" y1="128.07" x2="12.58" y2="128.07"/>
+    <line class="c" x1="158.67" y1="128.07" x2="113.29" y2="128.07"/>
+    <line class="c" x1="99.92" y1="141.93" x2="150.85" y2="141.93"/>
+    <line class="c" x1="54.86" y1="141.93" x2="86.88" y2="141.93"/>
+    <line class="c" x1="22.61" y1="141.93" x2="45.48" y2="141.93"/>
+    <line class="c" x1="65.71" y1="155.8" x2="37.77" y2="155.8"/>
+    <line class="c" x1="107.59" y1="155.8" x2="76.29" y2="155.8"/>
+    <line class="c" x1="135.61" y1="155.8" x2="119.58" y2="155.8"/>
+    <rect class="c" x="41.18" y="66.69" width="91.41" height="31.86" rx="4.88" ry="4.88" transform="translate(169.5 -4.26) rotate(90)"/>
+    <line class="c" x1="102.81" y1="67.02" x2="70.95" y2="67.02"/>
+    <line class="c" x1="102.81" y1="95.91" x2="70.95" y2="95.91"/>
+    <line class="c" x1="94.78" y1="74.37" x2="94.78" y2="74.37"/>
+    <line class="c" x1="94.78" y1="80.96" x2="94.78" y2="80.96"/>
+    <line class="c" x1="94.78" y1="87.54" x2="94.78" y2="87.54"/>
+    <line class="c" x1="86.88" y1="74.37" x2="86.88" y2="74.37"/>
+    <line class="c" x1="86.88" y1="81" x2="86.88" y2="81"/>
+    <line class="c" x1="86.88" y1="87.54" x2="86.88" y2="87.54"/>
+    <line class="c" x1="78.99" y1="74.37" x2="78.99" y2="74.37"/>
+    <line class="c" x1="78.99" y1="81" x2="78.99" y2="81"/>
+    <line class="c" x1="78.99" y1="87.54" x2="78.99" y2="87.54"/>
+    <line class="c" x1="62.41" y1="23.61" x2="62.41" y2="23.61"/>
+    <line class="c" x1="105.7" y1="20.66" x2="105.7" y2="20.66"/>
+    <line class="c" x1="137.89" y1="50.07" x2="137.89" y2="50.07"/>
+    <line class="c" x1="123.36" y1="79.26" x2="123.36" y2="79.26"/>
+    <line class="c" x1="51.81" y1="73.96" x2="51.81" y2="73.96"/>
+    <line class="c" x1="22.66" y1="58.06" x2="22.66" y2="58.06"/>
+  </g>
+</svg>

@@ -1,0 +1,215 @@
+<section class="content-stripe content-stripe--half">
+  <div class="wrapper">
+    <h2 class="uppercase-title">{{ section.settings.heading }}</h2>
+
+    {% unless section.settings.intro == blank %}
+
+      {{ section.settings.intro }}
+
+    {% endunless %}
+
+    <div class="shop-grid cats_out">
+      <div class="grid-item-l">
+        <a href="{{ section.settings.cat1_url }}">
+          {% if section.settings.cat1_image %}
+             <img src="{{ section.settings.cat1_image | img_url: '800x800', crop: 'center' }}" alt="{{ section.settings.cat1_text }}">
+          {% else %}
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+          {% endif %}
+          <h3>{{ section.settings.cat1_text }}</h3>
+					<p>{{ section.settings.cat1_desc }}</p>
+					{% if section.settings.button_text_1 != empty %}
+						<div class="btn btn--secondary">{{ section.settings.button_text_1 }}</div>
+					{% endif %}
+
+        </a>
+      </div><!-- .grid-item-l -->
+      <div class="grid-item-m">
+        <a href="{{ section.settings.cat2_url }}">
+          {% if section.settings.cat2_image %}
+             <img src="{{ section.settings.cat2_image | img_url: '800x800', crop: 'center' }}" alt="{{ section.settings.cat2_text }}">
+          {% else %}
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+          {% endif %}
+          <h3>{{ section.settings.cat2_text }}</h3>
+					<p>{{ section.settings.cat2_desc }}</p>
+					{% if section.settings.button_text_2 != empty %}
+						<div class="btn btn--secondary">{{ section.settings.button_text_2 }}</div>
+					{% endif %}
+        </a>
+      </div><!-- .grid-item-m -->
+      <div class="grid-item-r">
+        <a href="{{ section.settings.cat3_url }}">
+          {% if section.settings.cat3_image %}
+             <img src="{{ section.settings.cat3_image | img_url: '800x800', crop: 'center' }}" alt="{{ section.settings.cat3_text }}">
+          {% else %}
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+          {% endif %}
+          <h3>{{ section.settings.cat3_text }}</h3>
+					<p>{{ section.settings.cat3_desc }}</p>
+					{% if section.settings.button_text_3 != empty %}
+						<div class="btn btn--secondary">{{ section.settings.button_text_3 }}</div>
+					{% endif %}
+        </a>
+      </div><!-- .grid-item-r -->
+    </div>
+
+  </div><!-- .wrapper -->
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "Featured collections"
+  },
+  "class": "index-section index-section--flush",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Section heading"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": {
+        "en": "Introduction"
+      },
+      "default": {
+        "en": "<p>Introductory paragraph</p>"
+      }
+    },
+    {
+      "type": "header",
+      "content": "First Column"
+    },
+    {
+      "type": "url",
+      "id": "cat1_url",
+      "label": {
+        "en": "Link"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "cat1_image",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "text",
+      "id": "cat1_text",
+      "label": {
+        "en": "Heading"
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "cat1_desc",
+      "label": {
+        "en": "Description"
+      }
+    },
+		{
+      "type": "text",
+      "id": "button_text_1",
+      "label": {
+        "en": "Button Label"
+      }
+    },
+    {
+      "type": "header",
+      "content": "Second Column"
+    },
+    {
+      "type": "url",
+      "id": "cat2_url",
+      "label": {
+        "en": "Link"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "cat2_image",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "text",
+      "id": "cat2_text",
+      "label": {
+        "en": "Heading"
+      }
+    },
+		{
+			"type": "textarea",
+			"id": "cat2_desc",
+			"label": {
+				"en": "Description"
+			}
+		},
+		{
+      "type": "text",
+      "id": "button_text_2",
+      "label": {
+        "en": "Button Label"
+      }
+    },
+    {
+      "type": "header",
+      "content": "Third Column"
+    },
+    {
+      "type": "url",
+      "id": "cat3_url",
+      "label": {
+        "en": "Link"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "cat3_image",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "text",
+      "id": "cat3_text",
+      "label": {
+        "en": "Heading"
+      }
+    },
+		{
+			"type": "textarea",
+			"id": "cat3_desc",
+			"label": {
+				"en": "Description"
+			}
+		},
+		{
+      "type": "text",
+      "id": "button_text_3",
+      "label": {
+        "en": "Button Label"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collections",
+      "category": "Homepage sections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,133 @@
+<!-- begin site-footer -->
+<footer class="site-footer small--text-center" role="contentinfo">
+	<div class="pre-footer-links">
+		<div class="wrapper">
+			<div class="grid">
+				<div class="footer-column grid__item medium--one--whole xlarge--one-quarter large--one-half push--xlarge--three-quarters text-center">
+					<div class="html-text">{{ settings.md_area }}</div>
+				</div>
+				<div class="footer-column  grid__item xlarge--one-half large--one-half medium--one-half">
+					<div class="grid__item xlarge--one-half large--one-half medium--one-half">
+						<ul class="footer-nav" id="footerNav">
+							<h4>{{ linklists[settings.footer_links_1].title | escape }}</h4>
+							{% for link in linklists[settings.footer_links_1].links %}
+								{% assign child_list_handle = link.title | handleize %}
+								{% if linklists[child_list_handle].links != blank %}
+									<li>
+										<h5><a href="{{ link.url }}" class="footer-nav__link">
+											{{ link.title }}
+										</a></h5>
+										<ul class="footer-nav">
+											{% for childlink in linklists[child_list_handle].links %}
+												<li{% if childlink.active %} class="footer-nav--active"{% endif %}>
+													<a href="{{ childlink.url }}" class="footer-nav__link">{{ childlink.title | escape }}</a>
+												</li>
+											{% endfor %}
+										</ul>
+									</li>
+								{% else %}
+									<li {% if link.active %}class="footer-nav--active"{% endif %}>
+										<a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="grid__item xlarge--one-half large--one-half medium--one-half">
+						<ul class="footer-nav" id="footerNav">
+							<h4>{{ linklists[settings.footer_links_2].title | escape }}</h4>
+							{% for link in linklists[settings.footer_links_2].links %}
+								{% assign child_list_handle = link.title | handleize %}
+								{% if linklists[child_list_handle].links != blank %}
+									<li>
+										<h5><a href="{{ link.url }}" class="footer-nav__link">
+											{{ link.title }}
+										</a></h5>
+										<ul class="footer-nav">
+											{% for childlink in linklists[child_list_handle].links %}
+												<li{% if childlink.active %} class="footer-nav--active"{% endif %}>
+													<a href="{{ childlink.url }}" class="footer-nav__link">{{ childlink.title | escape }}</a>
+												</li>
+											{% endfor %}
+										</ul>
+									</li>
+								{% else %}
+									<li {% if link.active %}class="footer-nav--active"{% endif %}>
+										<a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+				<div class="footer-column grid__item xlarge--one-quarter large--one-whole pull--xlarge--three-quarters medium--one-half small--one-whole text-center">
+					<div class="footer-logo">
+						{% if settings.logo %}
+						<img src="{{ settings.logo | img_url: '300x' }}"
+                 srcset="{{ settings.logo | img_url: '300x' }} 1x, {{ settings.logo | img_url: '600x', scale: 2 }} 2x"
+                 alt="{{ settings.logo.alt | default: shop.name }}"
+                 itemprop="logo">
+						{% else %}
+						<img src="{{ 'logo-stacked.png' | asset_url }}" alt="Priori Skincare">
+						{% endif %}
+					</div>
+					{% if settings.footer_social_enable %}
+					{%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+					<ul class="inline-list social-icons social-icons--footer">
+						{% for social in social_accounts %}
+							{%- assign social_handle = social | handleize -%}
+							{% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+							{% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+
+
+							{% if settings[social_link] != blank %}
+								<li>
+									<a  class="icon-fallback-text"  href="{{ settings[social_link] }}" title="{{ shop.name }} on {{ social }}">
+										{% include social_icon %}
+										<span class="fallback-text">{{ social }}</span>
+									</a>
+								</li>
+							{% endif %}
+
+						{% endfor %}
+					</ul>
+				{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-footer">
+		<div class="wrapper">
+			<div class="grid">
+				<div class="grid__item xlarge-one-whole text-center">
+					<p>&copy; Priori Skincare | <a href="mailto:{{ shop.email }} ">{{ shop.email }}</a> | <a href="tel:{{ shop.phone }}">{{ shop.phone }}</ </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  {% if settings.show_payment_icons %}
+	<div class="text-center wrap">
+
+			Loop through available payment methods and show their icons.
+
+		{% unless shop.enabled_payment_types == empty %}
+			{% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
+			<!-- <h4 class="text-center">{{ 'layout.footer.accepted_payments' | t }}</h4> -->
+			<ul class="inline-list payment-icons">
+				{% for type in shop.enabled_payment_types %}
+					{% if payment_icons_available contains type %}
+						<li>
+							<span class="icon-fallback-text">
+								<span class="icon icon-{{type}}" aria-hidden="true"></span>
+								<span class="fallback-text">{{ type | replace: '_',' '}}</span>
+							</span>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		{% endunless %}
+	</div>
+  {% endif %}
+
+</footer>

@@ -1,0 +1,298 @@
+<section class="formulas content-stripe">
+  <div class="wrapper">
+    <h2 class="uppercase-title">{{ section.settings.heading }}</h2>
+
+    {{ section.settings.intro }}
+
+    <a href="{{ section.settings.button_link }}" class="btn btn--secondary">{{ section.settings.button_text }}</a>
+
+    <ul class="formulas-blocks">
+      <li>
+        <span class="formula-number">01</span>
+        <div class="block-img">
+          {% if section.settings.formula_image_1 %}
+            <img src="{{ section.settings.formula_image_1 | img_url: '1800x' }}" alt="Priori {{ section.settings.formula_title_1 }}">
+          {% else %}
+            <img src="{{ 'core-line.jpg' | asset_url }}" alt="Priori Adaptive Core Formulas">
+          {% endif %}
+        </div>
+        <div class="txt-box">
+          <h3 class="uppercase-title">{{ section.settings.formula_title_1 }}</h3>
+          <h4>{{ section.settings.formula_subtitle_1 }}</h4>
+
+          {{ section.settings.formula_copy_1 }}
+
+          {% assign collection = collections[section.settings.formula_collection_1] %}
+          <a href="{{ collection.url }}" class="btn btn--arrow btn--secondary">{{ section.settings.formula_button_1 }} <span>→</span></a>
+        </div>
+      </li>
+
+      <li>
+        <span class="formula-number">02</span>
+        <div class="block-img">
+          {% if section.settings.formula_image_2 %}
+            <img src="{{ section.settings.formula_image_2 | img_url: '1800x' }}" alt="Priori {{ section.settings.formula_title_2 }}">
+          {% else %}
+            <img src="{{ 'adaptive-superceuticals-collection_preview.jpg' | asset_url }}" alt="Priori Adaptive Superceutical Formulas">
+          {% endif %}
+        </div>
+        <div class="txt-box">
+          <h3 class="uppercase-title">{{ section.settings.formula_title_2 }}</h3>
+          <h4>{{ section.settings.formula_subtitle_2 }}</h4>
+
+          {{ section.settings.formula_copy_2 }}
+
+          {% assign collection = collections[section.settings.formula_collection_2] %}
+          <a href="{{ collection.url }}" class="btn btn--arrow btn--secondary">{{ section.settings.formula_button_2 }} <span>→</span></a>
+        </div>
+      </li>
+
+      <li>
+        <span class="formula-number">03</span>
+        <div class="block-img">
+          {% if section.settings.formula_image_3 %}
+            <img src="{{ section.settings.formula_image_3 | img_url: '1800x' }}" alt="Priori {{ section.settings.formula_title_3 }}">
+          {% else %}
+            <img src="{{ 'priori-naturals-family-home.jpg' | asset_url }}" alt="Priori Adaptive Natural Formulas">
+          {% endif %}
+        </div>
+        <div class="txt-box">
+          <h3 class="uppercase-title">{{ section.settings.formula_title_3 }}</h3>
+          <h4>{{ section.settings.formula_subtitle_3 }}</h4>
+
+          {{ section.settings.formula_copy_3 }}
+
+          {% assign collection = collections[section.settings.formula_collection_3] %}
+          <a href="{{ collection.url }}" class="btn btn--arrow btn--secondary">{{ section.settings.formula_button_3 }} <span>→</span></a>
+        </div>
+      </li>
+    </ul>
+  </div><!-- .wrapper -->
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "Priori Formulas"
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Priori Formulas"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": {
+        "en": "Introduction"
+      },
+      "default": {
+        "en": "<p>The difference is in the science. Priori’s Core, Superceutical, and Natural Formulas contain advanced complexes that provide everything you need for complete, personalized skincare that's as unique as you are. </p>"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "en": "Button Page Link"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": {
+        "en": "Button Label"
+      },
+      "default": {
+        "en": "Explore The Priori Difference"
+      }
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "formula_image_1",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_title_1",
+      "label": {
+        "en": "Title"
+      },
+      "default": {
+        "en": "Title"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_subtitle_1",
+      "label": {
+        "en": "Subtitle"
+      },
+      "default": {
+        "en": "Subtitle"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "formula_copy_1",
+      "label": {
+        "en": "Description"
+      },
+      "default": {
+        "en": "<p>Short description for this formula</p>"
+      }
+    },
+    {
+      "type": "collection",
+      "id": "formula_collection_1",
+      "label": {
+        "en": "Collection"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_button_1",
+      "label": {
+        "en": "Button Label"
+      },
+      "default": {
+        "en": "Button Label"
+      }
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "formula_image_2",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_title_2",
+      "label": {
+        "en": "Title"
+      },
+      "default": {
+        "en": "Title"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_subtitle_2",
+      "label": {
+        "en": "Subtitle"
+      },
+      "default": {
+        "en": "Subtitle"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "formula_copy_2",
+      "label": {
+        "en": "Description"
+      },
+      "default": {
+        "en": "<p>Short description for this formula</p>"
+      }
+    },
+    {
+      "type": "collection",
+      "id": "formula_collection_2",
+      "label": {
+        "en": "Collection"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_button_2",
+      "label": {
+        "en": "Button Label"
+      },
+      "default": {
+        "en": "Button Label"
+      }
+    },
+    {
+      "type": "header",
+      "content": "Item 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "formula_image_3",
+      "label": {
+        "en": "Image"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_title_3",
+      "label": {
+        "en": "Title"
+      },
+      "default": {
+        "en": "Title"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_subtitle_3",
+      "label": {
+        "en": "Subtitle"
+      },
+      "default": {
+        "en": "Subtitle"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "formula_copy_3",
+      "label": {
+        "en": "Description"
+      },
+      "default": {
+        "en": "<p>Short description for this formula</p>"
+      }
+    },
+    {
+      "type": "collection",
+      "id": "formula_collection_3",
+      "label": {
+        "en": "Collection"
+      }
+    },
+    {
+      "type": "text",
+      "id": "formula_button_3",
+      "label": {
+        "en": "Button Label"
+      },
+      "default": {
+        "en": "Button Label"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": "Numbered featured list",
+      "category": "Homepage sections"
+    }
+  ]
+}
+{% endschema %}

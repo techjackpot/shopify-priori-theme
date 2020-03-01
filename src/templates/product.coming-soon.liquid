@@ -1,0 +1,245 @@
+<!-- /templates/product.liquid -->
+{% comment %}
+
+  Rich snippets (itemscope, itemtype, etc.) for products are a theme requirement,
+  and allow search engines to easily understand what the content is.
+
+  For more information on these Scheme.org tags, visit:
+    - http://schema.org/docs/gs.html
+
+{% endcomment %}
+{% comment %}
+<section class="get-notified bg-black content-stripe">
+	<div class="wrapper">
+		<h3>Get notified when this product goes for sale</h3>
+		<p>Sign up for our monthly newsletter and stay up to date with Priori skincare science!</p>
+		<form action="{{ settings.newsletter_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="newsletter-form">
+
+			<span class="newsletter-input">
+				<input type="text" value="{% if customer %}{{ customer.first_name }}{% endif %}" placeholder="First Name" name="FIRST_NAME" id="first_name" aria-label="First Name" autocorrect="off" autocapitalize="off">
+			</span>
+			<span class="newsletter-input">
+				<input type="text" value="{% if customer %}{{ customer.last_name }}{% endif %}" placeholder="Last Name" name="LAST_NAME" id="last_name" aria-label="Last Name" autocorrect="off" autocapitalize="off">
+			</span>
+			<span class="newsletter-input">
+				<input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="Email Address" name="EMAIL" id="mail" aria-label="Email Address" autocorrect="off" autocapitalize="off">
+			</span>
+
+			<span class="newsletter-submit">
+				<button type="submit" class="btn" name="subscribe" id="subscribe">Subscribe to the Priori Newsletter <span>&rarr;</span></button>
+			</span>
+
+			<p class="no-spam">We hate spam too! Don't worry, we'll never share your information</p>
+
+		</form>
+	</div>
+</section>
+{% endcomment %}
+
+
+<div itemscope itemtype="http://schema.org/Product" id="coming-s" class="wrapper">
+
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+  {% comment %}
+    Get first variant, or deep linked one
+  {% endcomment %}
+  {% assign current_variant = product.selected_or_first_available_variant %}
+
+  <div class="grid product-single">
+    <div class="grid__item large--one-half text-center">
+
+      {% if product.images.size > 1 %}
+      <div class="grid-uniform">
+        <div class="grid__item one-fifth">
+          <ul class="product-single__thumbnails" id="ProductThumbs">
+            {% for image in product.images %}
+              <li>
+                <a href="{{ image.src | img_url: 'large' }}" class="product-single__thumbnail">
+                  <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="grid__item four-fifths">
+      {% endif %}
+
+          <div class="product-single__photos" id="ProductPhoto">
+            {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+            <img src="{{ featured_image | img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+          </div>
+
+      {% if product.images.size > 1 %}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <div class="grid__item large--one-half">
+
+
+      <h1 itemprop="name">{{ product.title | replace_first:"~","<br>" }}</h1>
+
+
+      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+
+        <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+        {% comment %}
+          ID addToCartForm is a selector for the ajax cart plugin
+        {% endcomment %}
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+
+          {% comment %}
+            Add product variants as a dropdown.
+              - By default, each variant (or combination of variants) will display as its own <option>
+              - To separate these into multiple steps, which we suggest, use option_selection.js (see below)
+
+            You can leverage jQuery to add a callback on page load and each time the select element changes:
+              - Include option_selection.js (as seen at the bottom of this file)
+              - This allows you to use JavaScript anytime the variant dropdown changes
+              - This also separates out your variant options (ie. size, color, etc.) to separate select elements
+
+            For more information on products with multiple options, visit:
+              - http://docs.shopify.com/support/your-website/themes/can-i-make-my-theme-use-products-with-multiple-options#update-product-liquid
+          {% endcomment %}
+          <select name="id" id="productSelect" class="product-single__variants">
+            <option disabled="disabled">
+              {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+            </option>
+          </select>
+
+
+
+          <div class="grid-uniform">
+            <div class="grid__item one-quarter">
+							<label for="Price" class="invisible">Price</label>
+							<span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+							<span id="ProductPrice" class="h2" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+								{{ current_variant.price | money }}
+							</span>
+
+            </div>
+
+            <div class="grid__item three-quarters">
+              <label for="AddToCart" class="invisible">Add to Cart</label>
+              <div>
+                <button class="btn--secondary btn--full disabled">
+                  <span>Coming Soon</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+				<div class="grid-uniform text-center">
+					<div class="modal" style="border:1px solid #E3D9DA;margin:30px 0px;max-width:100%;">
+						<div class="modal-body bg--white">
+							<h3>We'll notify you when Tetra is available.</h3>
+							<p>Plus, be the first to know about new products, sales, and more.</p>
+							<form action="{{ settings.newsletter_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="newsletter-form">
+
+								<span class="newsletter-input">
+									<input type="text" value="{% if customer %}{{ customer.first_name }}{% endif %}" placeholder="First Name" name="FIRST_NAME" id="first_name" aria-label="First Name" autocorrect="off" autocapitalize="off">
+								</span>
+								<span class="newsletter-input">
+									<input type="text" value="{% if customer %}{{ customer.last_name }}{% endif %}" placeholder="Last Name" name="LAST_NAME" id="last_name" aria-label="Last Name" autocorrect="off" autocapitalize="off">
+								</span>
+								<span class="newsletter-input">
+									<input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="Email Address" name="EMAIL" id="mail" aria-label="Email Address" autocorrect="off" autocapitalize="off">
+								</span>
+
+								<span class="newsletter-submit">
+									<button type="submit" class="btn btn--secondary" name="subscribe" id="subscribe">Join the Waitlist <span>&rarr;</span></button>
+								</span>
+
+								<p class="no-spam">You may unsubscribe at any time. <br>We hate spam too! Don't worry, we'll never share your information.</p>
+							</form>
+						</div>
+					</div>
+				</div>
+      <div class="product-description rte" itemprop="description">
+        <div>
+        <ul class="tabs">
+          <li class="tab-link active" data-tab="tab-1">Description</li>
+          <li class="tab-link" data-tab="tab-2">How This Works</li>
+          <li class="tab-link" data-tab="tab-3">Ingredients</li>
+        </ul>
+        <div id="tab-1" class="tab-content active">
+          {{ product.description | split: '~section 2~' | first }}
+        </div>
+        <div id="tab-2" class="tab-content">
+        	{{ product.description | split: '~section 2~' | last | split: '~section 3~' | first }}
+        </div>
+        <div id="tab-3" class="tab-content">
+        	{{ product.description | split: '~section 3~' | last }}
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<div class="wrapper">
+  {% include 'related-products' %}
+</div>
+
+<section class="instagram-section">
+  <div class="wrapper">
+    <h2>Priori on Instagram</h2>
+    <div id="insta-feed"></div>
+  </div>
+</section>
+
+
+{% comment %}
+  To take advantage of a callback on the select dropdown, add option_selection.js
+  and customize the JS in timber.productPage as needed.
+
+  Currently, timber.productPage does the following:
+    - Hides your <select> tag from above
+    - Breaks out the product variants into separate product options, if more than one exists
+    - Generates a <select> tag for each product option
+    - Enables/disables elements based on variant availability
+
+  Callback notes:
+    - Keep the callback available to the global scope (window.selectCallback) so that advanced
+      addons can override it.
+      * E.g. multiple currencies http://docs.shopify.com/manual/configuration/store-customization/currencies-and-translations/currencies/how-to-toggle-between-two-currencies
+{% endcomment %}
+{{ 'option_selection.js' | shopify_asset_url | script_tag }}
+<script>
+  var selectCallback = function(variant, selector) {
+    timber.productPage({
+      money_format: "{{ shop.money_format }}",
+      variant: variant,
+      selector: selector
+    });
+  };
+
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect', {
+      product: {{ product | json }},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
+    });
+
+    // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      $('.selector-wrapper:eq(0)').prepend('<label for="productSelect-option-0">{{ product.options.first | escape }}</label>');
+    {% endif %}
+
+    // Hide selectors if we only have 1 variant and its title contains 'Default'.
+    {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+      $('.selector-wrapper').hide();
+    {% endif %}
+  });
+</script>

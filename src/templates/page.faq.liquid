@@ -1,0 +1,284 @@
+<!-- /templates/faq.liquid -->
+<div class="grid">
+
+  <div class="grid__item large--two-thirds push--large--one-sixth">
+
+  	<section class="grid faqs">
+			<aside>
+	  		<div class="grid__item large--one-quarter">
+					<div class="sidebar-nav">
+		  			<ul class="faq-links">
+		  				<li><a href="#shipping" onClick="ga(‘send’, ‘event’, ‘Shipping Related’, ‘click’, faq’);">Shipping</a></li>
+		  				<li><a href="#billing" onClick="ga(‘send’, ‘event’, Billing Related’, ‘click’, faq’);">Billing</a></li>
+		  				<li><a href="#returns" onClick="ga(‘send’, ‘event’, ‘Returns + Exchanges Related’, ‘click’, faq’);">Returns + Exchanges</a></li>
+		  				<li><a href="#order" onClick="ga(‘send’, ‘event’, ‘Order Related’, ‘click’, faq’);">Ordering</a></li>
+		  				<li><a href="#product" onClick="ga(‘send’, ‘event’, ‘Product Related’, ‘click’, faq’);">Product Information</a></li>
+		  				<li><a href="#professionals" onClick="ga(‘send’, ‘event’, ‘Professionals Related’, ‘click’, faq’);">Professionals</a></li>
+		  				<li><a href="#customer" onClick="ga(‘send’, ‘event’, ‘Customer Service / Contact Related’, ‘click’, faq’);">Contact Us</a></li>
+		  			</ul>
+					</div>
+	  		</div>
+			</aside>
+			<div class="grid__item large--three-quarters">
+					<h1>{{ page.title }}</h1>
+
+
+			    <h2 id="shipping">Shipping</h2>
+
+			    <ul class="list-faqs">
+			    	<li>
+			    		<h3>Order and Shipping Confirmation</h3>
+			    		<p>You will receive an email confirmation once your order has been successfully placed that includes your order number and shipping method. Please make sure your shipping address is correct, as we are unable to redirect goods once they are en route. Orders can take up to 3 days to be processed and shipped. Once your order is prepared for shipment you will receive a confirmation email with your tracking information.</p>
+			    	</li>
+			    	<li>
+			    		<h3>Where We Ship</h3>
+						<p>We ship to US delivery addresses within the contiguous 48 states.</p>
+
+						<p>We also ship to Alaska, Hawaii, US Territories, and APO/FPO addresses when they have a US zip code. Additional shipping charges may apply, and delivery may take longer to these locations.</p>
+			    	</li>
+			    	<li>
+			    		<h3>Shipping Costs</h3>
+			    		<p>Standard Ground Shipping within the US is $5.95 for orders below $49, and free for orders over $49 after coupons, rebates and discounts.</p>
+			    		<p>Please note that order processing may take up to 2 business days after the order is placed. Second day delivery may not be available for orders placed on, or requested to be delivered on, Saturdays, Sundays or holidays. The availability of Second day delivery will always be subject to availability of stock, subject to a surcharge and be dependent on where the delivery location is.</p>
+			    		<p>Shipping to Alaska, Hawaii, US Territories, and APO/FPO addresses standard is $14.95 and free for orders over $49 after coupons, rebate and discounts.</p>
+			    	</li>
+			    	<li>
+			    		<h3>Taxes</h3>
+			    		<p>Taxes are calculated according to shipping destination.</p>
+			    	</li>
+			    	<li>
+			    		<h3>When will my order ship?</h3>
+			    		<p>Unless there is an unusual circumstance, our aim is to process your order within 48 hours. At that point it typically takes 3 days for the order to arrive.</p>
+			    	</li>
+			    	<li>
+			    		<h3>How long will it take to ship to Alaska, Hawaii, and Puerto Rico?</h3>
+			    		<p>Typically, it will take 7-10 days. We work diligently to shorten that time as much as we possibly can.</p>
+                  </li>
+			    	<li>
+			    		<h3>How do I track my order?</h3>
+
+			    		<p>Each order is assigned a tracking number that will be sent to you when we confirm your order has been received, and again when it is about to ship. Once shipped, use that tracking number until you receive your ordered. Sometimes order progress takes a day or so before it is reported via the link.</p>
+			    	</li>
+			    	<li>
+			    		<h3>How can I edit my shipping address?</h3>
+
+			    		<p>When the Ship To designation is on your screen, simply delete the previous information and enter the new address.</p>
+			    	</li>
+			    </ul>
+
+			    <hr id="billing" />
+
+				<h2>Billing</h2>
+
+				<ul class="list-faqs">
+					<li>
+						<h3>When will my credit card be charged?</h3>
+
+						<p>Your credit card will be charged as soon as your order is confirmed.</p>
+					</li>
+
+					<li>
+						<h3>Can I remove a saved payment method?</h3>
+
+						<p>Yes. You can simply delete the saved method from your customer information. If you have difficulty with this, please <a href="mailto:info@prioriskincare.com">contact Customer Service</a>.</p>
+					</li>
+
+
+					<li>
+						<h3>What forms of payment do you accept?</h3>
+
+						<p>We accept online payments by Visa, MasterCard, American Express or PayPal. When purchasing from Priori your financial details are passed through a secure server using the latest 128-bit SSL (secure socket layer) encryption technology. Credit card details are never stored on the Priori website in any way, and are passed on directly to our Payment Gateway (Stripe or PayPal) for authorization and authentication.</p>
+					</li>
+
+
+					<li>
+						<h3>What can I do if my payment is declined?</h3>
+
+						<p>If you believe your payment method has been declined erroneously you can contact your provider, or <a href="mailto:info@prioriskincare.com">contact us</a>, and we will try to find another solution.</p>
+					</li>
+				</ul>
+
+				<hr id="returns" />
+
+				<h2>Returns + Exchanges</h2>
+
+			    <ul class="list-faqs">
+                 	<li>
+                      <h3>Easy 30-Day Returns</h3>
+						<p>PRIORI stands behind the quality of our products, and we hope you are happy with your order. If you are not satisfied for any reason, simply return your item(s) within 30 days of purchase for a full refund, minus shipping. </p>
+                      	<p>Returning your PRIORI order is free and easy. For your convenience, our Customer Service team will provide a pre-paid label upon email request. Returns and exchanges are accepted within 30 days of order date. A full refund, excluding shipping charges, will be issued on unused items once we receive your return. Please keep a record of your return tracking.</p> 	
+                      <p>Please note: only items purchased on prioriskincare.com may be accepted for return or exchange. If you purchased your items in a salon or through an authorized retailer, please contact them for their return policy.</p>
+                  </li>
+
+					<li>
+						<h3>Return Shipping</h3>
+                      <p>Email PRIORI Skincare Customer Service at <a href="info@prioriskincare.com">info@prioriskincare.com</a>  for us to send you a pre-paid return shipping label.</p>
+					</li>
+
+					<li>
+						<h3>Late Returns</h3>
+						<p>Any item returned after 30 days from order date is not eligible for refund.</p>
+					</li>
+					<li>
+						<h3>Receiving a Refund</h3>
+
+						<p>A refund will be issued once we have received your returned items. Refunds do not include any shipping or handling charges. Your refund will be credited to the credit card used for the original transaction. Please note that credit card refunds may take up to 10 business day for your bank to complete, depending on their processing times. This can vary greatly between credit card issuers</p>
+					</li>
+
+					<li>
+						<h3>What should I do if I receive the wrong product?</h3>
+
+                      <p>We’re sorry about that. You can either call <a href="tel:+18006058564">(800 605-8564)</a>, or email our <a href="info@prioriskincare.com">Customer Service team</a>, and we will walk you through the steps to correct this error.</p>
+					</li>
+				</ul>
+
+				<hr id="order" />
+
+				<h2>Ordering</h2>
+
+			    <ul class="list-faqs">
+					<li>
+						<h3>How can I update my order?</h3>
+
+						<p>Sorry, but once an order is processed, we can’t alter that order. You can, of course, make another order and we will do our best to make certain you receive it just as fast as the first order.</p>
+					</li>
+
+					<li>
+						<h3>How can I check the status of my order?</h3>
+
+						<p>First, we suggest clicking on the link in your order confirmation email. That will show you where your package is on that day. If you are having difficulty with that, we encourage you to <a href="mailto:info@prioriskincare.com">contact our Customer Service team</a>.</p>
+					</li>
+
+					<li>
+						<h3>Can I use multiple promo codes at checkout?</h3>
+
+						<p>Only one promo code will work on each order. </p>
+					</li>
+				</ul>
+
+				<hr id="product" />
+
+				<h2>Product Information</h2>
+
+			    <ul class="list-faqs">
+					<li>
+						<h3>How can I find out more information about a product?</h3>
+
+						<p>You can either send an email or call our Customer Service team, and one of our aestheticians will guide you through your product selections</p>
+					</li>
+
+					<li>
+						<h3>What skin types are Priori products suitable for?</h3>
+
+						<p>Priori products are formulated for all skin types. If you have questions as to whether any particular product is right for you, you can consult our Customer Service team, and they will guide you through the selection process</p>
+					</li>
+                  <li><h3>Can Priori Skincare products be used on sensitive skin?</h3>
+                    <p>Yes, all our products are appropriate for all skin types, including the most sensitive.</p>
+                  </li>
+
+						<li><h3>Do you test on animals?</h3>
+
+						<p>Unequivocally, we do not test on animals. Period. We are PETA certified</p>
+					</li>
+                  
+                  <li><h3>Are your products all-natural, “clean” and non-toxic?</h3> 
+
+                    <p>Priori Clean Beauty products, including the Triple Turmeric Complex and mineral skincare lines, are made with natural ingredients and are not only cruelty free, colorant and fragrance free, but are also formulated without harsh chemicals that can cause skin irritations - a great natural choice for your skin and the environment. Our products are formulated without sulfates, SLS and SLES, parabens, formaldehydes, formalde- hyde-releasing agents, phthalates, mineral oil, oxybenzone, coal tar, hydroquinone, triclosan, and triclocarban. Dermatologist tested.</p>
+                  </li>
+                  
+                  <li><h3>Are your products paraben- and fragrance-free?</h3>
+                    <p>Yes, all our products are free of parabens and fragrances and are thoroughly tested by dermatologists for safety, skin sensitivity and comedogenicity.</p>
+                  </li>
+
+					<li>
+						<h3>How can I get an ingredient listing?</h3>
+
+						<p>All Priori products feature an ingredient listing on the package as well as on the product pages of this site</p>
+					</li>
+
+					<li>
+						<h3>Can I purchase the old Priori products?</h3>
+
+						<p>Our new lines are similar to previous Priori products, but have been updated and enhanced to provide you even better results. We think you'll like them</p>
+					</li>
+
+					<li>
+						<h3>Do you offer samples?</h3>
+
+						<p>There are times we offer samples, but not always. Also, there are certain products that have smaller, travel sizes, as a trial product. You can also go to one of our retail partners and try the products there</p>
+					</li>
+
+					<li>
+						<h3>Where can I learn how to use Priori’s products?</h3>
+
+						<p>You can either send an email, or call, our Customer Service team and one of our aestheticians can help inform you as to how our products work. You can also check on our product pages for instructions on each product</p>
+					</li>
+
+					<li>
+						<h3>How are Priori products different from other beauty brands?</h3>
+
+						<p>Priori products feature our Adaptive Skincare technology that enables your individualized skin to receive individualized benefit from the products, in real-time, so you can achieve your ideal skin</p>
+					</li>
+
+					<li>
+						<h3>Where can I find Priori Products in a store?</h3>
+
+						<p>Please <a href="mailto:info@prioriskincare.com">contact Customer Service</a> for assistance.</p>
+					</li>
+                  
+                  	<li>
+                      <h3>Can I use Priori Skincare products if I am pregnant or lactating?</h3>
+                      
+                      <p>Cosmetics, Cosmeceuticals and most Prescription Drugs are not tested for reproductive toxicology. 
+                    Priori skincare products have not been tested and it is a personal choice between you and your physician or beauty therapist if any products should be used during pregnancy. Always refer to your doctor for this answer.</p>
+					</li>
+                  
+                  	<li>
+                      <h3>How long will it take to see visible results?</h3>
+                      
+                    <p>Within a few weeks of using Priori Skincare products on a regular basis, skin should begin to look and feel smoother and healthier. The look of fine lines and wrinkles will begin to diminish and complexion and texture will appear more even. An average of 2 to 6 weeks should be allowed for visible results, depending on the condition of the skin prior to using PRIORI products. However, due to the variable nature of the human skin, no guarantee can be made regarding length of time it will take to see visible results.</p>
+                      <p>Individual customer experiences with Priori Skincare products may vary. Results given in testimonials and clinical trials are from real customers who have used Priori Skincare products, but similar results are not guaranteed. Individual results may vary depending on skin type, sensitivity, age, and skincare history, as well as how the product is applied.</p>
+</li>
+				</ul>
+
+				<hr id="professionals" />
+
+				<h2>Professionals</h2>
+
+			    <ul class="list-faqs">
+					<li>
+						<h3>How do I get Priori Professional Products?</h3>
+
+						<p>Please <a href="mailto:info@prioriskincare.com">contact Customer Service</a>.</p>
+					</li>
+
+					<li>
+						<h3>How are Priori Professional products different than the core lines?</h3>
+
+						<p>Please <a href="mailto:info@prioriskincare.com">contact Customer Service</a> and we will guide you through our Professional line. </p>
+					</li>
+				</ul>
+
+				<hr id="customer" />
+
+				<h2>Contact Us</h2>
+
+				<ul class="list-faqs">
+					<li>
+						<h3>How do I find out about new product launches or special deals?</h3>
+
+						<p>We invite you to join our mailing list and we will then notify you of upcoming events in your area, as well as special promotions that are available throughout the year.</p>
+					</li>
+
+					<li>
+						<h3>How do I get specific questions answered by a person?</h3>
+
+						<p>You should contact our great Customer Service team at <a href="mailto:info@prioriskincare.com">info@prioriskincare.com</a>, or <a href="tel:800-605-8564">(800) 605-8564</a>. </p>
+					</li>
+				</ul>
+			</div>
+  	</section><!-- .grid  faqs-->
+
+  </div>
+
+</div>

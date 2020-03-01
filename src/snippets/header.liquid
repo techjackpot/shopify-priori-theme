@@ -1,0 +1,221 @@
+<style>
+  {% if settings.logo != blank %}
+    .site-header__logo-image {
+      max-width: {{ settings.logo_max_width }}px;
+    }
+  {% endif %}
+</style>
+<header class="site-header" role="banner">
+	<div class="wrapper">
+
+		<div class="grid--full grid--table main-nav">
+			<div class="grid__item large--two-fifths small--one-eighth">
+				<nav class="nav-bar" role="navigation">
+					<div>
+						<div class="medium-down--hide">
+							<ul class="site-nav" id="AccessibleNav">
+								{% for link in linklists[settings.main_linklist].links %}
+								 {% comment %}
+									 Create a dropdown menu by naming a linklist the same as a link in the parent nav
+
+									 More info on dropdowns:
+										 - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
+								 {% endcomment %}
+								 {% assign child_list_handle = link.title | handleize %}
+								 {% if linklists[child_list_handle].links != blank %}
+									 <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+										 <a href="{{ link.url }}" class="site-nav__link">
+											 {{ link.title }}
+											 <span class="icon icon-arrow-down" aria-hidden="true"></span>
+										 </a>
+										 <ul class="site-nav__dropdown">
+											 {% for childlink in linklists[child_list_handle].links %}
+												 <li{% if childlink.active %} class="site-nav--active"{% endif %}>
+													 <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+												 </li>
+											 {% endfor %}
+										 </ul>
+									 </li>
+								 {% else %}
+									 <li {% if link.active %}class="site-nav--active"{% endif %}>
+										 <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+									 </li>
+								 {% endif %}
+							 {% endfor %}
+						 </ul>
+						 <!-- //site-nav -->
+						 {% comment %} --old sitenave with large dropdown
+							<!-- begin site-nav -->
+							<ul class="site-nav" id="AccessibleNav">
+									<li>
+										<a href="/" class="site-nav__link">Home</a>
+									</li>
+									<li class="site-nav--has-dropdown shop-nav-item" aria-haspopup="true">
+										<a href="/collections/all" class="site-nav__link">
+											Shop
+											<span class="icon icon-arrow-down" aria-hidden="true"></span>
+										</a>
+										{% include 'big-dropdown' %}
+									</li>
+									<li>
+										<a href="/collections/all" class="site-nav__link">
+											Shop
+										</a>
+									</li>
+									<li>
+										<a href="/pages/adaptive-skincare" class="site-nav__link">Adaptive Skincare</a>
+									</li>
+							</ul>
+							<!-- //site-nav -->
+							{% endcomment %}
+						</div>
+						<div class="large--hide medium-down--show">
+							<div class="site-nav--mobile">
+								<button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
+									<span class="icon icon-hamburger" aria-hidden="true"></span>
+									<span class="fallback-text">{{ 'layout.navigation.menu' | t }}</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="grid__item large--one-fifth">
+				{% comment %}
+					Use the uploaded logo from theme settings if enabled.
+					Site name gets precedence with H1 tag on homepage, div on other pages.
+				{% endcomment %}
+				{% if template == 'index' %}
+					<h1 class="site-header__logo" itemscope itemtype="http://schema.org/Organization">
+				{% else %}
+					<div class="h1 site-header__logo" itemscope itemtype="http://schema.org/Organization">
+				{% endif %}
+					{% if settings.logo_use_image %}
+						<a href="/" itemprop="url" class="site-header__logo-link">
+							<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+						</a>
+					{% else %}
+						<a href="/" itemprop="url">{{ shop.name }}</a>
+					{% endif %}
+				{% if template == 'index' %}
+					</h1>
+				{% else %}
+					</div>
+				{% endif %}
+			</div>
+			<div class="grid__item large--two-fifths">
+				<div class="medium-down--hide large--text-right">
+					<div class="grid">
+						{% comment %}
+							<div class="grid__item xlarge--one-half xlarge-down--hide">
+								<ul class="inline-list social-icons social-icons--header">
+									<li>
+										<a class="icon-fallback-text" target="_blank" href="{{ settings.social_instagram_link }}" title="{{ shop.name }} on Instagram">
+											<span class="icon icon-insta icon-instagram" aria-hidden="true"></span>
+											<span class="fallback-text">Instagram</span>
+										</a>
+									</li>
+									<li>
+										<a class="icon-fallback-text" target="_blank" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
+											<span class="icon icon-facebook" aria-hidden="true"></span>
+											<span class="fallback-text">Facebook</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						{% endcomment %}
+
+						<div class="grid__item  {% comment %} xlarge--one-half xlarge-one-whole {% endcomment %} ">
+
+							{% comment %}
+								If customer accounts are enabled, provide login and create account links
+							{% endcomment %}
+
+							<div class="site-header__customer">
+								{% if customer %}
+									{% if customer.first_name != blank %}
+										{% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+										{{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+									{% else %}
+										<a href="/account">{{ 'layout.customer.account' | t }}</a>
+									{% endif %}
+									| {{ 'layout.customer.log_out' | t | customer_logout_link }}
+								{% else %}
+									{{ 'layout.customer.log_in' | t | customer_login_link }}
+									{% comment %}
+
+									not sure if we are going to have a registration link?
+
+									| {{ 'layout.customer.create_account' | t | customer_register_link }}
+									{% endcomment %}
+
+								{% endif %}
+							</div>
+
+								<label for="navsearch" class="icon-fallback-text search-toggle">
+									<span class="icon icon-search" aria-hidden="true"></span>
+									<span class="icon icon-x" aria-hidden="true"></span>
+									<span class="fallback-text">{{ 'general.search.submit' | t }}</span>
+								</label>
+
+
+
+							<div class="site-header__cart">
+
+                              {% comment %}
+								<a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
+									<span class="icon-fallback-text">
+										<span class="icon icon-cart" aria-hidden="true"></span>
+										<span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
+										{% if cart.item_count > 0 %}<span class="cart-items-count">{{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count | remove: "items" | remove: "item"}}</span>{% endif %}
+									</span>
+								</a>
+                               {% endcomment %}
+                              
+							</div>
+
+							{% comment %}My Mini Cart App {% endcomment %}
+
+							<div class="sd_dropdown-mini-cart">
+                              <div class="sd_dropdown-minibag" style="position:relative">
+                                <span class="icon icon-cart" aria-hidden="true" style="font-size:24px;"></span> {% if cart.item_count > 0 %}<span class="cart-items-count" style="top: -7px;left: 15px;">{{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count | remove: "items" | remove: "item"}}</span>{% endif %}</div>
+                              <div class="sd_dropdown-inner-area"><div class="sd_dropdown-cart-items">
+                              </div></div></div>
+                          
+						</div>
+					</div>
+				</div>
+				<div class="large--hide medium-down--show">
+					<div class="site-nav--mobile text-right">
+						<label for="navsearch" class="icon-fallback-text search-toggle site-nav__link">
+							<span class="icon icon-search" aria-hidden="true"></span>
+							<span class="icon icon-x" aria-hidden="true"></span>
+							<span class="fallback-text">{{ 'general.search.submit' | t }}</span>
+						</label>
+                      {%comment%}
+						<a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
+							<span class="icon-fallback-text">
+								<span class="icon icon-cart" aria-hidden="true"></span>
+								<span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
+								{% if cart.item_count > 0 %}<span class="cart-items-count">{{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count | remove: "items" | remove: "item"}}</span>{% endif %}
+							</span>
+						</a>
+                        {%endcomment%}
+                      <div class="sd_dropdown-mini-cart">
+                              <div class="sd_dropdown-minibag" style="position:relative">
+                                <span class="icon icon-cart" aria-hidden="true" style="font-size:24px;"></span> {% if cart.item_count > 0 %}<span class="cart-items-count" style="top: -7px;left: 15px;">{{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count | remove: "items" | remove: "item"}}</span>{% endif %}</div>
+                              <div class="sd_dropdown-inner-area"><div class="sd_dropdown-cart-items">
+                              </div></div></div>
+                      
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid--full grid--table search--nav text-center">
+			<div class="grid__item large--three-quarters push--large--one-eighth">
+			<div class="site-header__search text-center">
+				{% include 'search-bar' %}
+			</div>
+		</div>
+	</div>
+</header>

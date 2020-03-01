@@ -1,0 +1,29 @@
+{% capture CFH %}{{ content_for_header }}{% endcapture %}
+ {% assign sovi_disable_cs = false %}
+ {% if CFH contains 'admin_bar_iframe' or theme.role == 'unpublished' %}
+ {% assign sovi_disable_cs = true %}
+ {% endif %}
+ {% if CFH contains 'design_mode' %}
+ {% assign sovi_disable_cs = true %}
+ {% endif %}
+ {% if shop.metafields.sovi_coming_soon.password_enabled == 1 %}
+ {% assign auth_hash = cart.attributes["svi_auth"] | sha256 %}
+ {% if auth_hash == shop.metafields.sovi_coming_soon.auth_hash %}
+ {% assign sovi_disable_cs = true %}
+ {% endif %}
+ {% endif %}
+ {% if shop.metafields.sovi_coming_soon.url_whitelist and shop.metafields.sovi_coming_soon.url_whitelist.size > 0 %}
+ {% assign sovi_whitelist_urls = shop.metafields.sovi_coming_soon.url_whitelist | split: ',' %}
+ {% for url in sovi_whitelist_urls %}
+ {% assign url = url | strip %}
+ {% if url == request.path %}
+ {% assign sovi_disable_cs = true %}
+ {% endif %}
+ {% endfor %}
+ {% endif %}
+ {% unless sovi_disable_cs %}
+ <style>body{display:none;}</style>
+ <script>
+ window.location.pathname == "/apps/coming-soon" ? "" : window.location.href = "{{shop.url}}/apps/coming-soon";
+ </script>
+ {% endunless %}

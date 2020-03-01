@@ -1,0 +1,149 @@
+<section style="background-color:{{ section.settings.background_color }};" class=" content-stripe content-stripe--{{ section.settings.color }}">
+	<h2 class="uppercase-title">{{ section.settings.heading }}</h2>
+	<ul class="flex-content">
+		<li>
+			{{ section.settings.text_left }}
+			{% if section.settings.button_label_left != blank and section.settings.button_link_left != blank %}
+				<a href="{{ section.settings.button_link_left }}" class="btn btn--arrow">
+					{{ section.settings.button_label_left | escape }}
+				<span>→</span></a>
+			{% endif %}
+		</li>
+
+		<li>
+				{{ section.settings.text_right }}
+				{% if section.settings.button_label_right != blank and section.settings.button_link_right != blank %}
+					<a href="{{ section.settings.button_link_right }}" class="btn btn--arrow">
+						{{ section.settings.button_label_right | escape }}
+					<span>→</span></a>
+				{% endif %}
+		</li>
+	</ul>
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "General Content Columns"
+  },
+  "class": "index-section index-section--flush",
+  "settings": [
+		{
+			"type": "color",
+			"id": "background_color",
+			"label": "Background Color",
+			"default": "#fff"
+		},
+		{
+			"type": "select",
+			"id": "color",
+			"label": {
+				"en": "Text Color"
+			},
+			"default": "dark",
+			"options": [
+				{
+					"value": "dark",
+					"label": {
+						"en": "Dark"
+					}
+				},
+				{
+					"value": "light",
+					"label": {
+						"en": "Light"
+					}
+				}
+			]
+		},
+		{
+      "type": "text",
+      "id": "heading",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "A very important heading"
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "text_left",
+      "label": {
+        "en": "Text Area - Column One"
+      },
+      "default": {
+        "en": "<h3>This is a general textarea</h3><p>Use this section for any general content by using simple html.</p>"
+      }
+    },
+		{
+      "type": "text",
+      "id": "button_label_left",
+      "label": {
+        "de": "Button-Etikett",
+        "en": "Button label",
+        "es": "Etiqueta de botón",
+        "fr": "Texte du bouton",
+        "it": "Etichetta pulsante",
+        "ja": "ボタンラベル",
+        "pt-BR": "Etiqueta do botão"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link_left",
+      "label": {
+        "de": "Button-Etikett",
+        "en": "Button link",
+        "es": "Enlace de botón",
+        "fr": "Lien du bouton",
+        "it": "Link pulsante",
+        "ja": "ボタンリンク",
+        "pt-BR": "Link do botão"
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "text_right",
+      "label": {
+        "en": "Text Area - Column 2"
+      },
+      "default": {
+        "en": "<h3>This is a general textarea</h3><p>Use this section for any general content by using simple html.</p>"
+      }
+    },
+		{
+      "type": "text",
+      "id": "button_label_right",
+      "label": {
+        "de": "Button-Etikett",
+        "en": "Button label",
+        "es": "Etiqueta de botón",
+        "fr": "Texte du bouton",
+        "it": "Etichetta pulsante",
+        "ja": "ボタンラベル",
+        "pt-BR": "Etiqueta do botão"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link_right",
+      "label": {
+        "de": "Button-Etikett",
+        "en": "Button link",
+        "es": "Enlace de botón",
+        "fr": "Lien du bouton",
+        "it": "Link pulsante",
+        "ja": "ボタンリンク",
+        "pt-BR": "Link do botão"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": "General Content Columns",
+      "category": "Homepage sections"
+    }
+  ]
+}
+{% endschema %}

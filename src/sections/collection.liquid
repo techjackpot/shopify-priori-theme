@@ -1,0 +1,259 @@
+<!-- /templates/collection.liquid -->
+{% comment %}
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+{% endcomment %}
+
+{% paginate collection.products by 12 %}
+
+{% if collection.handle == 'routine-hydrate' %}
+  <div class="banner banner--sm banner--light">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+        <p>{{ collection.description }}</p>
+      </div>
+    </div>
+  </div><!-- .banner -->
+{% elsif collection.handle == 'routine-cleanse' %}
+  <div class="banner banner--sm banner--light">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+        <p>{{ collection.description }}</p>
+      </div>
+    </div>
+  </div><!-- .banner -->
+{% elsif collection.handle == 'routine-treat' %}
+  <div class="banner banner--sm banner--light">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+        <p>{{ collection.description }}</p>
+      </div>
+    </div>
+  </div><!-- .banner -->
+{% elsif collection.handle == 'adaptive-core-formulas' %}
+  <div class="banner banner--sm banner--light">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+      </div>
+    </div>
+  </div><!-- .banner -->
+{% elsif collection.handle == 'adaptive-core-formulas' %}
+  <div class="banner banner--sm banner--light">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+      </div>
+    </div>
+  </div><!-- .banner -->
+{% elsif collection.handle == 'adaptive-superceutical-formulas' %}
+  <div class="banner banner--md banner--dark">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+      </div>
+    </div>
+  </div><!-- .banner -->
+{% elsif collection.handle == 'mothers-day-collection' %}
+  <div class="banner banner--md banner--dark">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+      </div>
+    </div>
+  </div><!-- .banner -->
+{% elsif collection.image.src != blank %}
+
+  <div class="banner banner--sm banner--light">
+
+    <img class="banner-img" src="{{ collection.image.src | collection_img_url: '1800x' }}" alt="{{ collection.title | escape }}" />
+
+    <div class="wrapper">
+      <div class="banner-txt">
+        <h1>{{ collection.title }}</h1>
+      </div>
+    </div>
+  </div><!-- .banner -->
+
+{% endif %}
+
+
+
+<div class="wrapper">
+
+{% comment %}
+  Use .grid--rev so that the collection tags appear below the products on mobile
+{% endcomment %}
+<div class="grid--rev product-single">
+		{% if section.settings.show_sidebar %}
+  		<div class="grid__item large--three-quarters">
+		{% else %}
+			<div class="grid__item large--full">
+		{% endif %}
+    {% comment %}
+      Different markup if a collection description exists
+    {% endcomment %}
+    {% if collection.description != blank %}
+		{% if collection.handle == 'routine-hydrate' %}
+			{% comment %}
+				Hide title for this handle
+			{% endcomment %}
+		{% elsif collection.handle == 'routine-cleanse' %}
+			{% comment %}
+				Hide title for this handle
+			{% endcomment %}
+		{% elsif collection.handle == 'routine-treat' %}
+			{% comment %}
+				Hide title for this handle
+			{% endcomment %}
+		{% elsif collection.handle == 'adaptive-core-formulas' %}
+		<header class="section-header">
+			<div class="rte rte--header">
+				<h3>{{ collection.description }}</h3>
+			</div>
+		</header>
+		{% elsif collection.handle == 'adaptive-superceuticals-formulas' %}
+		<header class="section-header">
+			<div class="rte rte--header">
+				<h3>{{ collection.description }}</h3>
+			</div>
+		</header>
+		{% else %}
+      <header class="section-header">
+        <h1 class="section-header__title">{{ collection.title }}</h1>
+        <div class="rte rte--header">
+          {{ collection.description }}
+        </div>
+      </header>
+		{% endif %}
+      <hr>
+      <div class="section-header">
+        <div class="section-header__right">
+          {% include 'collection-sorting' %}
+        </div>
+      </div>
+    {% else %}
+      <header class="section-header">
+        <h1 class="section-header__title section-header__left">{{ collection.title }}</h1>
+        <div class="section-header__right">
+          {% include 'collection-sorting' %}
+        </div>
+      </header>
+    {% endif %}
+
+    {% comment %}
+      Use class grid-uniform to have evenly sized columns clear
+      each other properly at each breakpoint.
+    {% endcomment %}
+    <div class="grid-uniform">
+
+      {% comment %}
+        Loop through our products in the current collection.
+        See the snippet 'product-grid-item' for the layout.
+      {% endcomment %}
+      {% for product in collection.products %}
+
+        {% include 'product-grid-item' %}
+
+      {% else %}
+
+        {% if collection.handle == 'all' and current_tags == '' %}
+
+          {% comment %}
+            Add default products to help with onboarding for collections/all only
+          {% endcomment %}
+          {% unless emptyState %}
+            {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+            {% assign emptyState = true %}
+          {% endunless %}
+          {% include 'onboarding-empty-collection' %}
+
+        {% else %}
+
+          {% comment %}
+            If collection exists but is empty, display message
+          {% endcomment %}
+          <div class="grid__item">
+            <p>{{ 'collections.general.no_matches' | t }}</p>
+          </div>
+
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <hr>
+      <div class="pagination">
+        {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+      </div>
+    {% endif %}
+
+  </div>
+	  <div class="grid__item large--one-quarter">
+			{% if section.settings.show_sidebar %}
+	    	{% include 'collection-sidebar' %}
+			{% endif %}
+	  </div>
+</div>
+
+{% endpaginate %}
+
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Collection",
+    "settings": [
+			{
+				"type": "checkbox",
+				"id": "show_sidebar",
+				"label": "Show Sidebar",
+				"default": false
+			},
+      {
+        "type": "link_list",
+        "id": "collection_sidebar",
+        "label": "Collection Sidebar",
+        "default": "footer"
+      },
+			{
+				"type": "checkbox",
+				"id": "show_tags",
+				"label": "Show Tags in sidebar",
+				"default": false
+			}
+    ]
+  }
+
+{% endschema %}

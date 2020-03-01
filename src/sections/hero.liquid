@@ -1,0 +1,264 @@
+<div class="hero-carousel">
+	{% for block in section.blocks %}
+		{% if block.settings.show_slide %}
+
+		<div class="banner banner-home" style="background-color: {{ block.settings.background_color }};">
+		  {% if block.settings.image %}
+		  	<img class="banner-img" style="opacity: {{ block.settings.opacity | divided_by: 100.00  }};" src="{{ block.settings.image | img_url: '1800x' }}" alt="">
+		  {% endif %}
+
+		  {% comment %}
+
+		  {% if section.settings.image == blank %}
+		    <div class="placeholder-background">
+		      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+		    </div>
+		  {% endif %}
+
+		  {% endcomment %}
+			<div class="wrapper {% if block.settings.foreground-image != blank %} banner-flex {% endif %}">
+		    <div class="banner-text {{ block.settings.color }} large--one-half">
+
+					{% if block.settings.small-heading != blank %}
+		        <p class="lede">{{ block.settings.small-heading | escape }}</p>
+		      {% endif %}
+		      {% if block.settings.small-heading != blank %}
+		        <h1>{{ block.settings.title | escape }}</h1>
+		      {% endif %}
+
+		      {% if block.settings.text != blank %}
+		        <h3>{{ block.settings.text }}</h3>
+		      {% endif %}
+		      {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+		        <a href="{{ block.settings.button_link }}" class="btn btn--arrow">
+		          {{ block.settings.button_label | escape }}
+		        <span>→</span></a>
+		      {% endif %}
+
+		    </div>
+
+		    {% if block.settings.foreground-image != blank %}
+					{% if block.settings.button_link != blank %}
+			      <div class="large--one-half">
+							<a class="banner-foreground-img-link" href="{{ block.settings.button_link }}">
+			        	<img class="banner-foreground-img" src="{{ block.settings.foreground-image | img_url: '797x' }}" alt="">
+							</a>
+			      </div>
+					{% else %}
+						<div class="large--one-half">
+							<img class="banner-foreground-img" src="{{ block.settings.foreground-image | img_url: '797x' }}" alt="">
+						</div>
+					{% endif %}
+
+		    {% endif %}
+
+		  </div>
+		</div>
+		{% endif %}
+{% endfor %}
+</div>
+
+{% javascript %}
+$(document).ready(function(){
+  $('.hero-carousel').flickity({
+    cellSelector: '.banner',
+    wrapAround: true,
+    cellAlign: 'left',
+		pageDots: false,
+    imagesLoaded: true
+  });
+});
+$(document).ready(function(){
+	var $gallery = $('.hero-carousel').flickity();
+	var $galleryCells = $gallery.find('.banner');
+	if ( $galleryCells.length < 2 ) {
+		$gallery.addClass('is-hiding-nav-ui');
+	}
+});
+
+{% endjavascript %}
+
+
+{% schema %}
+{
+	"blocks": [
+		{
+			"name": "Slide",
+			"type": "slide",
+			"limit": 4,
+			"settings": [
+				{
+	        "type": "checkbox",
+	        "id": "show_slide",
+	        "label": "Show Slide",
+					"default": true
+	      },
+				{
+					"type": "image_picker",
+					"id": "foreground-image",
+					"label": {
+						"de": "Foto",
+						"en": "Foreground image",
+						"es": "Imagen",
+						"fr": "Image",
+						"it": "Immagine",
+						"ja": "画像",
+						"pt-BR": "Imagem"
+					}
+				},
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": {
+						"de": "Foto",
+						"en": "Background Image",
+						"es": "Imagen",
+						"fr": "Image",
+						"it": "Immagine",
+						"ja": "画像",
+						"pt-BR": "Imagem"
+					}
+				},
+				{
+				   "type": "color",
+				   "id": "background_color",
+					 "label": {
+ 						"de": "Hintergrundfarbe",
+ 						"en": "Background Color",
+ 						"es": "Color de fondo",
+ 						"fr": "Couleur de Fond ",
+ 						"it": "Colore di sfondo",
+ 						"ja": "背景色",
+ 						"pt-BR": "Cor de fundo"
+ 		      },
+				   "default": "#ffffff"
+				},
+				{
+				  "type": "range",
+				  "id": "opacity",
+				  "min": 0,
+				  "max": 100,
+				  "step": 10,
+				  "unit": "%",
+				  "label": "Opacity Percentage",
+				  "default": 100
+				},
+				{
+		      "type": "select",
+		      "id": "color",
+		      "label": {
+		        "en": "Color"
+		      },
+		      "default": "light",
+		      "options": [
+		        {
+		          "value": "dark",
+		          "label": {
+		            "en": "Dark"
+		          }
+		        },
+		        {
+		          "value": "light",
+		          "label": {
+		            "en": "Light"
+		          }
+		        }
+		      ]
+		    },
+		    {
+		      "type": "text",
+		      "id": "small-heading",
+		      "label": {
+		        "de": "Titel",
+		        "en": "Heading",
+		        "es": "Título",
+		        "fr": "En-tête",
+		        "it": "Small Heading",
+		        "ja": "見出し",
+		        "pt-BR": "Título"
+		      },
+		      "default": {
+		        "de": "Foto mit überlegtem Text",
+		        "en": "Image with text overlay",
+		        "es": "Imagen con texto",
+		        "fr": "Image avec superposition de texte",
+		        "it": "Immagine con testo",
+		        "ja": "テキストオーバーレイ付き画像",
+		        "pt-BR": "Imagem com sobreposição de texto"
+		      }
+		    },
+		    {
+		      "type": "text",
+		      "id": "title",
+		      "label": {
+		        "de": "Titel",
+		        "en": "Heading",
+		        "es": "Título",
+		        "fr": "En-tête",
+		        "it": "Heading",
+		        "ja": "見出し",
+		        "pt-BR": "Título"
+		      },
+		      "default": {
+		        "de": "Foto mit überlegtem Text",
+		        "en": "Image with text overlay",
+		        "es": "Imagen con texto",
+		        "fr": "Image avec superposition de texte",
+		        "it": "Immagine con testo",
+		        "ja": "テキストオーバーレイ付き画像",
+		        "pt-BR": "Imagem com sobreposição de texto"
+		      }
+		    },
+		    {
+		      "type": "richtext",
+		      "id": "text",
+		      "label": {
+		        "de": "Text",
+		        "en": "Text",
+		        "es": "Texto",
+		        "fr": "Texte",
+		        "it": "Testo",
+		        "ja": "テキスト",
+		        "pt-BR": "Texto"
+		      },
+		      "default": {
+		        "de": "<p>Nutzen Sie überlegten Text, um Kunden über Ihre Marke zu informieren. Wählen Sie Fotos und Text aus, die zu Ihrer Marke passen.</p>",
+		        "en": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.</p>",
+		        "es": "<p>Usa el texto superpuesto para darles información a tus clientes sobre tu marca. Selecciona imágenes y textos que se relacionen con tu estilo e historia.</p>",
+		        "fr": "<p>Utilisez la superposition de texte pour donner un aperçu de votre marque à vos clients. Utilisez une image et du texte qui se rapportent au style et à l'histoire de votre marque.</p>",
+		        "it": "<p>Utilizza il testo in sovrapposizione per dare ai clienti informazioni sul tuo brand. Seleziona immagini e testo legati al tuo stile e alla tua storia.</p>",
+		        "ja": "<p>オーバーレイテキストを使用して、お客様があなたのブランドについてよく理解できるようにします。あなたのスタイルやストーリーに関連する画像やテキストを選択してください。</p>",
+		        "pt-BR": "<p>Use o texto de sobreposição para apresentar informações sobre sua marca aos clientes. Selecione imagens e textos que reflitam seu estilo e sua história.</p>"
+		      }
+		    },
+		    {
+		      "type": "text",
+		      "id": "button_label",
+		      "label": {
+		        "de": "Button-Etikett",
+		        "en": "Button label",
+		        "es": "Etiqueta de botón",
+		        "fr": "Texte du bouton",
+		        "it": "Etichetta pulsante",
+		        "ja": "ボタンラベル",
+		        "pt-BR": "Etiqueta do botão"
+		      }
+		    },
+		    {
+		      "type": "url",
+		      "id": "button_link",
+		      "label": {
+		        "de": "Button-Etikett",
+		        "en": "Button link",
+		        "es": "Enlace de botón",
+		        "fr": "Lien du bouton",
+		        "it": "Link pulsante",
+		        "ja": "ボタンリンク",
+		        "pt-BR": "Link do botão"
+		      }
+		    }
+			]
+		}
+	]
+}
+{% endschema %}

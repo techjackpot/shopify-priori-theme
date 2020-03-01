@@ -1,0 +1,55 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. YOU CAN COPY AND PASTE INTO A NEW SNIPPET.
+  THIS FILE WILL BE OVERWRITTEN.
+{% endcomment %}
+<div class="custom-fields-wrapper">
+
+            {% if product.metafields.custom_fields["product_code"] != blank %}
+            <div class="custom-field custom-field__product-code custom-field__type--text">
+                <h3 class="custom-field--title">Product Code</h3>
+                <div class="custom-field--value">{{ product.metafields.custom_fields["product_code"] }}</div>
+              </div>
+            {% endif %}
+
+            {% if product.metafields.custom_fields["how_this_works"] != blank %}
+            <div class="custom-field custom-field__how-this-works custom-field__type--html">
+                <h3 class="custom-field--title">How This Works</h3>
+                <div class="custom-field--value">{{ product.metafields.custom_fields["how_this_works"] }}</div>
+              </div>
+            {% endif %}
+
+            {% if product.metafields.custom_fields["ingredients"] != blank %}
+            <div class="custom-field custom-field__ingredients custom-field__type--html">
+                <h3 class="custom-field--title">Ingredients</h3>
+                <div class="custom-field--value">{{ product.metafields.custom_fields["ingredients"] }}</div>
+              </div>
+            {% endif %}
+
+            {% if product.metafields.custom_fields["technical_specification_pdf_do"] != blank %}
+            <div class="custom-field custom-field__technical-specification-pdf-do custom-field__type--file">
+                <h3 class="custom-field--title">Technical specification PDF download</h3>
+                <div class="custom-field--value">{{ product.metafields.custom_fields["technical_specification_pdf_do"] }}</div>
+              </div>
+            {% endif %}
+
+            {% if product.metafields.custom_fields["adaptive_skincare"] != blank %}
+            <div class="custom-field custom-field__adaptive-skincare custom-field__type--html">
+                <h3 class="custom-field--title">Adaptive Skincare</h3>
+                <div class="custom-field--value">{{ product.metafields.custom_fields["adaptive_skincare"] }}</div>
+              </div>
+            {% endif %}
+
+            {% if product.metafields.custom_fields["lifestyle_call-out_/_benefits"] != blank %}
+            <div class="custom-field custom-field__lifestyle-call-out---benefits custom-field__type--html">
+                <h3 class="custom-field--title">Lifestyle Call-out / Benefits</h3>
+                <div class="custom-field--value">{{ product.metafields.custom_fields["lifestyle_call-out_/_benefits"] }}</div>
+              </div>
+            {% endif %}
+
+            {% if product.metafields.custom_fields["features_(in_depth)"] != blank %}
+            <div class="custom-field custom-field__features-in-depth custom-field__type--html">
+                <h3 class="custom-field--title">Features (In Depth)</h3>
+                <div class="custom-field--value">{{ product.metafields.custom_fields["features_(in_depth)"] }}</div>
+              </div>
+            {% endif %}
+</div>

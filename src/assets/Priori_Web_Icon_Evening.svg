@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 173 173">
+  <defs>
+    <style>
+      .a, .c {
+        fill: #fff;
+      }
+
+      .a, .b, .c {
+        stroke: #6d6e70;
+        stroke-width: 3px;
+      }
+
+      .a {
+        stroke-miterlimit: 10;
+      }
+
+      .b {
+        fill: none;
+      }
+
+      .b, .c {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <title>Priori_Web_Icon_Evening</title>
+  <g>
+    <circle class="a" cx="86.5" cy="86.5" r="85"/>
+    <line class="b" x1="66.31" y1="100.38" x2="116.18" y2="100.35"/>
+    <polyline class="b" points="31.69 100.41 51.92 100.39 57.84 100.39"/>
+    <line class="b" x1="31.19" y1="114.28" x2="6.63" y2="114.29"/>
+    <polyline class="b" points="93.39 114.23 55.46 114.26 41.21 114.27"/>
+    <line class="b" x1="142.34" y1="114.2" x2="104.4" y2="114.23"/>
+    <line class="b" x1="165.15" y1="114.18" x2="151.65" y2="114.19"/>
+    <line class="b" x1="31.28" y1="128.15" x2="12.62" y2="128.16"/>
+    <line class="b" x1="121.55" y1="128.09" x2="90.28" y2="128.11"/>
+    <line class="b" x1="81.55" y1="128.09" x2="58.28" y2="128.1"/>
+    <line class="b" x1="158.75" y1="128.06" x2="131.91" y2="128.08"/>
+    <line class="b" x1="128.28" y1="141.95" x2="150.93" y2="141.93"/>
+    <line class="b" x1="92.69" y1="141.97" x2="102.28" y2="141.96"/>
+    <line class="b" x1="54.91" y1="142" x2="82.84" y2="141.98"/>
+    <line class="b" x1="22.65" y1="142.02" x2="45.53" y2="142.01"/>
+    <line class="b" x1="65.78" y1="155.86" x2="37.83" y2="155.88"/>
+    <line class="b" x1="107.67" y1="155.83" x2="76.36" y2="155.85"/>
+    <line class="b" x1="135.7" y1="155.81" x2="119.66" y2="155.82"/>
+    <path class="b" d="M2.51,96.57a257.29,257.29,0,0,1,167.38-3"/>
+    <path class="b" d="M2.93,83.69a276.09,276.09,0,0,1,166.4-2.79"/>
+    <polyline class="b" points="59.78 6 109.93 67.43 131.29 47.28"/>
+    <polyline class="b" points="123.37 46.3 133.58 44.99 131.78 55.12"/>
+    <polyline class="b" points="21.7 33.05 51.62 71.02 74.87 49.78"/>
+    <polyline class="b" points="66.95 48.79 77.16 47.48 75.35 57.62"/>
+    <circle class="c" cx="132.84" cy="100.02" r="6"/>
+    <circle class="c" cx="44.83" cy="128.02" r="6"/>
+    <circle class="c" cx="117.84" cy="142.02" r="6"/>
+  </g>
+</svg>

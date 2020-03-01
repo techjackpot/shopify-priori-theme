@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.77 193.77">
+  <defs>
+    <style>
+      .a, .c, .d, .e {
+        fill: none;
+      }
+
+      .a {
+        stroke: #e6e7e8;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 11.49 9.19;
+        opacity: 0.8;
+      }
+
+      .a, .b, .c, .d, .e {
+        stroke-width: 3px;
+      }
+
+      .b {
+        fill: #fff;
+      }
+
+      .b, .c {
+        stroke: #231f20;
+      }
+
+      .b, .c, .d, .e {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .d {
+        stroke: #000;
+      }
+
+      .e {
+        stroke: #ffc600;
+      }
+    </style>
+  </defs>
+  <title>Priori_Web_Icon_Intelligent_1</title>
+  <g>
+    <circle class="a" cx="96.89" cy="96.89" r="95.38"/>
+    <circle class="b" cx="96.89" cy="96.89" r="84.44"/>
+    <path class="c" d="M129.61,117.55a22.3,22.3,0,0,1-10.54,4.58,31,31,0,0,1-17.46-2.88c-4.47-2.06-8.55-4.93-13.21-6.54a27.1,27.1,0,0,0-21.08,1.61,25.73,25.73,0,0,0-5.47,3.83"/>
+    <line class="d" x1="94.82" y1="100.24" x2="94.82" y2="64.73"/>
+    <line class="d" x1="84.21" y1="97.31" x2="84.21" y2="71.19"/>
+    <line class="e" x1="106.18" y1="106.31" x2="106.18" y2="70.19"/>
+    <line class="d" x1="118.16" y1="110.31" x2="118.25" y2="79.64"/>
+    <line class="d" x1="129.14" y1="103.31" x2="129.23" y2="86.24"/>
+    <line class="e" x1="62.25" y1="104.77" x2="62.34" y2="86.24"/>
+    <line class="d" x1="73.23" y1="100.31" x2="73.32" y2="80.64"/>
+  </g>
+</svg>
