@@ -16,7 +16,7 @@
     "download:prod": "SHOPIFY_ENV=production node -r dotenv/config scripts/download",
     "start": "node -r dotenv/config scripts/watch",
     "dev": "nodemon -r dotenv/config scripts/watch",
-    "deploy": "node -r dotenv/config scripts/deploy",
+    "deploy": "node -r dotenv/config scripts/deploy"
   },
   "repository": {
     "type": "git",
