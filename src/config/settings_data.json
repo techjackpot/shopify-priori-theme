@@ -102,7 +102,7 @@
             "settings": {
               "show_slide": true,
               "foreground-image": "shopify:\/\/shop_images\/Priori_Clear_1920x1080_470b5cc4-df6a-4bae-836d-43f1fa44009b.png",
-              "image": "shopify:\/\/shop_images\/ScienceBased_NEW-IMAGE_BANNER-1920x1080_FA.jpg",
+              "image": "shopify:\/\/shop_images\/ScienceBased_NEW_IMAGE_BANNER-1920x1080_FA2-01.jpg",
               "background_color": "#ffffff",
               "opacity": 100,
               "color": "light",
@@ -179,18 +179,18 @@
       "1542309461184": {
         "type": "product-carousel",
         "blocks": {
-          "1542309461184-0": {
+          "1583958056073": {
             "type": "carousel",
             "settings": {
-              "carousel": "frontpage"
+              "carousel": "skincare-upgrades"
             }
           }
         },
         "block_order": [
-          "1542309461184-0"
+          "1583958056073"
         ],
         "settings": {
-          "heading": "DISCOVER OUR TRAVEL AND TRIAL KITS",
+          "heading": "DISCOVER OUR SKINCARE UPGRADES",
           "intro": ""
         }
       },
@@ -199,19 +199,19 @@
         "settings": {
           "heading": "",
           "intro": "",
-          "cat1_url": "shopify:\/\/products\/the-recovery-kit",
-          "cat1_image": "shopify:\/\/shop_images\/Image_from_iOS_4.jpg",
-          "cat1_text": "Recovery On The Go - Travel Kits",
+          "cat1_url": "shopify:\/\/collections\/facial-cleansers",
+          "cat1_image": "shopify:\/\/shop_images\/PRIORI_2002_EW_6.jpg",
+          "cat1_text": "Step Up Your Spring Cleaning With Our Adaptive Cleansers",
           "cat1_desc": "",
           "button_text_1": "SHOP NOW",
-          "cat2_url": "shopify:\/\/collections\/adaptive-natural-formulas",
-          "cat2_image": "shopify:\/\/shop_images\/priori_191002_SC_Turmeric.jpg",
-          "cat2_text": "The Benefits Of Antioxidant-Rich Turmeric",
+          "cat2_url": "shopify:\/\/collections\/gifts-travel-kits",
+          "cat2_image": "shopify:\/\/shop_images\/priori_3_16.jpg",
+          "cat2_text": "Heading Out Of Town? Stock Up On Travel Essentials?",
           "cat2_desc": "",
-          "button_text_2": "LEARN MORE",
+          "button_text_2": "SHOP NOW",
           "cat3_url": "shopify:\/\/products\/q-sod-fx220-brightening-serum",
-          "cat3_image": "shopify:\/\/shop_images\/Priori_191211_SC_Texture-Text-Overlay_REVIEW_1.jpg",
-          "cat3_text": "Beat Those Winter Blues With Moisture",
+          "cat3_image": "shopify:\/\/shop_images\/Q_SOD_Brightening_Serum_FA-04.jpg",
+          "cat3_text": "Beat Those Winter Blues With Some Moisture",
           "cat3_desc": "",
           "button_text_3": "SHOP NOW"
         }
