@@ -70,7 +70,7 @@ $colorBorder: {{ settings.color_borders }};
 
 // Nav and dropdown link background
 $colorNav: $colorPrimary;
-$colorNavText: #fff;
+$colorNavText: #231F20;
 
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -1372,7 +1372,7 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
 // }
 
 .pre-footer {
-  background-color: #1A1A1A;
+  background-color: #ffffff;
   color: #fff;
   padding: $gutter 0;
   @include at-query ($min, $large) {
@@ -1386,7 +1386,7 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
 }
 .pre-footer-links {
 	padding: $gutter 0;
-	background: darken($colorPrimary, 4%);
+	background: #ffffff;
 	.footer-column  {
 		padding-top: 20px;
 		padding-bottom: 20px;
@@ -1407,6 +1407,7 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
 	position: relative;
   background-color: $colorFooterBg;
   color: $colorNavText;
+  border-top: solid 1px #D8D3CB;
 	z-index: 10;
   a {
     color: $colorNavText;
@@ -1415,9 +1416,16 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
 	.footer-logo {
 		margin-bottom: $gutter/2;
 		img {
-			max-width: 100px;
+			// max-width: 100px;
 		}
 	}
+
+  .footer-col-label {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
 
   .footer-nav {
 		h1, h2, h3, h4, h5, h6 {
@@ -1448,34 +1456,46 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
 
 
   .social-icons {
-		margin-top: $gutter/2;
+    margin-top: 0;
 		li {
 			position: relative;
-			width: 25px;
-			height: 25px;
-			margin: 15px;
-			padding: 25px;
-			border: solid 3px #212223;
+			margin: 0 12px 12px 0;
+			padding: 0px;
+			border: 0 none;
 			border-radius: 50%;
-			overflow: visible;
-	    a { color: $colorNavText; }
-	    .icon {
-				position: absolute;
-				width: 24px;
-				top: 24px;
-				left: 14px;
-				top: 12px;
-				fill: #fff !important;
-	    }
+      background: #231F20;
+			overflow: hidden;
+	    a { color: #ffffff; }
+      i {
+        font-size: 21px;
+        line-height: 40px;
+        width: 40px;
+        text-align: center;
+      }
 		}
 		&:first-of-type a .icon {
 			margin-left: 0px;
 		}
   }
 	.bottom-footer {
-		padding: $gutter;
+		padding: 0;
+    p {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 24.5px 0;
+      border-top: solid 1px #D8D3CB;
+      a {
+        margin-left: 12px;
+        font-weight: 600;
+      }
+    }
 	}
-
+  .footer-signup {
+    form {
+      padding: 0;
+    }
+  }
 }
 
 //styles for index slider - need to go in timer.scss instead of .carousel-explore styles

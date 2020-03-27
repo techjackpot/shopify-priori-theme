@@ -144,9 +144,8 @@
     "name": "Footer",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "footer_social_enable",
-        "label": "Show social media icons"
+        "type": "header",
+        "content": "Footer Logo"
       },
       {
         "type": "image_picker",
@@ -156,16 +155,45 @@
         }
       },
       {
+        "type": "header",
+        "content": "Footer Column 1"
+      },
+      {
+        "type": "text",
+        "id": "footer_col1_label",
+        "label": "Column Label",
+        "default": "Support"
+      },
+      {
         "type": "link_list",
-        "id": "footer_links_1",
+        "id": "footer_links",
         "label": "First menu",
         "default": "footer"
       },
       {
-        "type": "link_list",
-        "id": "footer_links_2",
-        "label": "Second menu",
-        "default": "footer"
+        "type": "header",
+        "content": "Footer Column 2"
+      },
+      {
+        "type": "text",
+        "id": "footer_col2_label",
+        "label": "Column Label",
+        "default": "Follow Us"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_social_enable",
+        "label": "Show social media icons"
+      },
+      {
+        "type": "header",
+        "content": "Footer Column 3"
+      },
+      {
+        "type": "text",
+        "id": "footer_col3_label",
+        "label": "Column Label",
+        "default": "Subscribe For 15% Off"
       },
       {
         "type": "html",
@@ -174,10 +202,18 @@
         "default": "<div><p>Email embed code HTML<\/p><\/div>"
       },
       {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
+        "type": "header",
+        "content": "Footer Bottom Text"
+      },
+      {
+        "type": "richtext",
+        "id": "footer_bottom_text",
+        "label": {
+          "en": "Bottom Text"
+        },
+        "default": {
+          "en": "<p>Copyright 2020 SkinSciPac, LLC. All rights reserved. <a href=\"/pages/privacy-and-terms\">Privacy + Terms</a></p>"
+        }
       }
     ]
   },
