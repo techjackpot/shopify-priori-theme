@@ -23,7 +23,7 @@
 							 {% endcomment %}
 
 							 <li>
-				        <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
+				        <a href="{{ link.url }}" {% if link.active or link.child_active %}aria-current="page"{% endif %}>
 				          {{ link.title }}
 				        </a>
 
