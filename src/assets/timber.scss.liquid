@@ -2371,8 +2371,47 @@ http://flickity.metafizzy.co
 ==============================================================================*/
 
 .hero-carousel {
+  @include at-query($max, $preMedium) {
+    border-bottom: solid 1px #D8D3CB;
+    .flickity-button {
+      display: none;
+    }
+  }
 	.flickity-page-dots {
-		bottom: 10px;
+    bottom: 21px;
+    right: 21px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    .dot {
+      width: 20px;
+      height: 20px;
+      margin: 0 0 8px;
+      border: solid 3px #fff;
+      background: transparent;
+      opacity: 1;
+      &.is-selected {
+        background: rgba(255, 255, 255, 0.8);
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    @include at-query($max, $preMedium) {
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+      .dot {
+        margin: 0 4px;
+        border-color: #D8D3CB;
+        &.is-selected {
+          background: rgba(216, 211, 203, 0.8);
+        }
+      }
+    }
 	}
 }
 
@@ -2394,11 +2433,121 @@ http://flickity.metafizzy.co
 	width: 100%;
 
 	&.banner-home {
-		background: black;
-		.banner-img {
-			object-position: 75% 50%;
-		}
+		// background: black;
+		// .banner-img {
+		// 	object-position: 75% 50%;
+		// }
 	}
+
+  .banner-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    .banner-background_img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .banner-background_video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      object-fit: cover;
+    }
+  }
+
+  .slide-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    pointer-events: none;
+    &.slide-content--left {
+      justify-content: flex-start;
+    }
+    &.slide-content--right {
+      justify-content: flex-end;
+    }
+    .slide-content-wrapper {
+      position: relative;
+      .slide-content-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        .slide-content-background_img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+        }
+      }
+      .slide-content-text {
+        position: relative;
+        text-align: center;
+        &.slide-content-text--dark {
+          color: #000;
+          hr {
+            border-color: #000;
+          }
+          .slide-content-button {
+            color: #000;
+            border-color: #000;
+          }
+        }
+        &.slide-content-text--light {
+          color: #fff;
+          hr {
+            border-color: #fff;
+          }
+          .slide-content-button {
+            color: #fff;
+            border-color: #fff;
+          }
+        }
+        p:last-of-type {
+          margin-bottom: 0;
+        }
+        .slide-content-heading {
+          font-size: 36px;
+          line-height: 42px;
+          font-weight: 100;
+          strong {
+            font-weight: 600;
+          }
+        }
+        hr {
+          width: 187px;
+          margin: 24px auto;
+        }
+        .slide-content-subhead {
+          font-size: 21px;
+          line-height: 25px;
+          font-weight: 100;
+          strong {
+            font-weight: 400;
+          }
+        }
+        .slide-content-button {
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          padding: 12px 28px;
+          margin-top: 24px;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
 
   .wrapper.banner-flex,
   .banner-text.banner-flex {
@@ -2478,6 +2627,7 @@ http://flickity.metafizzy.co
     &.banner-txt-white { color: #fff ; }
   }
 
+  /*
   h1,
   p { font-weight: 100; }
 
@@ -2504,6 +2654,7 @@ http://flickity.metafizzy.co
 		color: #fff;
 		border: 1px solid #fff;
 	}
+  */
 
   @include at-query($min, $medium) {
     padding-left: 15px;
@@ -2547,6 +2698,7 @@ http://flickity.metafizzy.co
       min-height: 690px;
     }
 
+    /*
     h1 {
       font-size: 57px;
     }
@@ -2560,6 +2712,36 @@ http://flickity.metafizzy.co
       padding-top: 12px;
       padding-bottom: 12px;
       font-size: 18px;
+    }
+    */
+  }
+
+  @include at-query($max, $preMedium) {
+    padding: 0;
+    flex-wrap: wrap;
+    .banner-background {
+      position: relative;
+    }
+    .slide-content {
+      justify-content: center !important;
+      padding: 40px 0 80px;
+      .slide-content-wrapper {
+        margin: 0 !important;
+        .slide-content-background {
+          display: none;
+        }
+        .slide-content-text {
+          padding: 0 !important;
+          .slide-content-heading {
+            font-size: 32px;
+            line-height: 38px;
+          }
+          .slide-content-subhead {
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+      }
     }
   }
 } // .banner

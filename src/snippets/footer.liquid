@@ -3,72 +3,81 @@
 	<div class="pre-footer-links">
 		<div class="wrapper">
 			<div class="grid">
-				<div class="footer-column grid__item medium--one--whole xlarge--one-quarter large--one-half push--xlarge--three-quarters">
-					<div class="footer-col-label">{{ settings.footer_col3_label }}</div>
-					<div class="footer-signup">{{ settings.md_area }}</div>
-				</div>
-				<div class="footer-column  grid__item xlarge--one-half large--one-half medium--one-half">
-					<div class="grid__item xlarge--one-half large--one-half medium--one-half">
-						<div class="footer-col-label">{{ settings.footer_col1_label }}</div>
-						<ul class="footer-nav" id="footerNav">
-							{% for link in linklists[settings.footer_links].links %}
-								{% assign child_list_handle = link.title | handleize %}
-								{% if linklists[child_list_handle].links != blank %}
-									<li>
-										<h5><a href="{{ link.url }}" class="footer-nav__link">
-											{{ link.title }}
-										</a></h5>
-										<ul class="footer-nav">
-											{% for childlink in linklists[child_list_handle].links %}
-												<li{% if childlink.active %} class="footer-nav--active"{% endif %}>
-													<a href="{{ childlink.url }}" class="footer-nav__link">{{ childlink.title | escape }}</a>
-												</li>
-											{% endfor %}
-										</ul>
-									</li>
-								{% else %}
-									<li {% if link.active %}class="footer-nav--active"{% endif %}>
-										<a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
-									</li>
-								{% endif %}
-							{% endfor %}
-						</ul>
+				<div class="grid__item xlarge--one-quarter large--one-whole medium--one-whole small--one-whole text-center">
+					<div class="footer-column">
+						<div class="footer-logo">
+							{% if settings.logo %}
+							<img src="{{ settings.logo | img_url: '226x' }}"
+	                 srcset="{{ settings.logo | img_url: '113x' }} 1x, {{ settings.logo | img_url: '226x', scale: 2 }} 2x"
+	                 alt="{{ settings.logo.alt | default: shop.name }}"
+	                 itemprop="logo">
+							{% else %}
+							<img src="{{ 'logo-stacked.png' | asset_url }}" alt="Priori Skincare">
+							{% endif %}
+						</div>
 					</div>
-
-					{% if settings.footer_social_enable %}
-					<div class="grid__item xlarge--one-half large--one-half medium--one-half">
-						<div class="footer-col-label">{{ settings.footer_col2_label }}</div>
-						{%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-						<ul class="inline-list social-icons social-icons--footer">
-							{% for social in social_accounts %}
-								{%- assign social_handle = social | handleize -%}
-								{% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-								{% capture social_icon %}fa-icon-{{ social_handle }}{% endcapture %}
-
-
-								{% if settings[social_link] != blank %}
-									<li>
-										<a href="{{ settings[social_link] }}" title="{{ shop.name }} on {{ social }}">
-											{% include social_icon %}
-										</a>
-									</li>
-								{% endif %}
-
-							{% endfor %}
-						</ul>
-					</div>
-					{% endif %}
 				</div>
-				<div class="footer-column grid__item xlarge--one-quarter large--one-whole pull--xlarge--three-quarters medium--one-half small--one-whole text-center">
-					<div class="footer-logo">
-						{% if settings.logo %}
-						<img src="{{ settings.logo | img_url: '226x' }}"
-                 srcset="{{ settings.logo | img_url: '113x' }} 1x, {{ settings.logo | img_url: '226x', scale: 2 }} 2x"
-                 alt="{{ settings.logo.alt | default: shop.name }}"
-                 itemprop="logo">
-						{% else %}
-						<img src="{{ 'logo-stacked.png' | asset_url }}" alt="Priori Skincare">
-						{% endif %}
+				<div class="grid__item xlarge--three-quarters large--one-whole medium--one-whole small--one-whole">
+					<div class="grid">
+						<div class="grid__item xlarge--one-third large--one-third medium--one-whole small--one-whole medium--text-center">
+							<div class="footer-column">
+								<div class="footer-col-label">{{ settings.footer_col1_label }}</div>
+								<ul class="footer-nav" id="footerNav">
+									{% for link in linklists[settings.footer_links].links %}
+										{% assign child_list_handle = link.title | handleize %}
+										{% if linklists[child_list_handle].links != blank %}
+											<li>
+												<h5><a href="{{ link.url }}" class="footer-nav__link">
+													{{ link.title }}
+												</a></h5>
+												<ul class="footer-nav">
+													{% for childlink in linklists[child_list_handle].links %}
+														<li{% if childlink.active %} class="footer-nav--active"{% endif %}>
+															<a href="{{ childlink.url }}" class="footer-nav__link">{{ childlink.title | escape }}</a>
+														</li>
+													{% endfor %}
+												</ul>
+											</li>
+										{% else %}
+											<li {% if link.active %}class="footer-nav--active"{% endif %}>
+												<a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
+											</li>
+										{% endif %}
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						<div class="grid__item xlarge--one-third large--one-third medium--one-whole small--one-whole medium--text-center">
+							<div class="footer-column">
+							{% if settings.footer_social_enable %}
+								<div class="footer-col-label">{{ settings.footer_col2_label }}</div>
+								{%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+								<ul class="inline-list social-icons social-icons--footer">
+									{% for social in social_accounts %}
+										{%- assign social_handle = social | handleize -%}
+										{% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+										{% capture social_icon %}fa-icon-{{ social_handle }}{% endcapture %}
+
+
+										{% if settings[social_link] != blank %}
+											<li>
+												<a href="{{ settings[social_link] }}" title="{{ shop.name }} on {{ social }}">
+													{% include social_icon %}
+												</a>
+											</li>
+										{% endif %}
+
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</div>
+						</div>
+						<div class="grid__item xlarge--one-third large--one-third medium--one-whole small--one-whole medium--text-center">
+							<div class="footer-column">
+								<div class="footer-col-label">{{ settings.footer_col3_label }}</div>
+								<div class="footer-signup">{{ settings.md_area }}</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
