@@ -22,6 +22,8 @@ $xxlarge: 1200px;
 $postSmall: $small + $viewportIncrement;
 $preMedium: $medium - $viewportIncrement;
 $preLarge: $large - $viewportIncrement;
+$preXLarge: $xlarge - $viewportIncrement;
+$preXXLarge: $xxlarge - $viewportIncrement;
 
 /*================ The following are dependencies of csswizardry grid ================*/
 $breakpoints: (
@@ -30,11 +32,13 @@ $breakpoints: (
   'medium-down' '(max-width: #{$medium})',
   'large' '(min-width: #{$large})',
   'xlarge-down' '(max-width: #{$xlarge})',
-  'xlarge' '(min-width: #{$xxlarge})'
+  'xlarge' '(min-width: #{$xlarge})',
+  'xxlarge-down' '(max-width: #{$preXXLarge})',
+  'xxlarge' '(min-width: #{$xxlarge})'
 );
-$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'xlarge', 'xlarge-down');
-$breakpoint-has-push:  ('medium', 'medium-down', 'large', 'xlarge', 'xlarge-down');
-$breakpoint-has-pull:  ('medium', 'medium-down', 'large', 'xlarge', 'xlarge-down');
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'xlarge', 'xlarge-down', 'xxlarge', 'xxlarge-down');
+$breakpoint-has-push:  ('medium', 'medium-down', 'large', 'xlarge', 'xlarge-down', 'xxlarge', 'xxlarge-down');
+$breakpoint-has-pull:  ('medium', 'medium-down', 'large', 'xlarge', 'xlarge-down', 'xxlarge', 'xxlarge-down');
 
 /*============================================================================
   #General Variables
@@ -735,7 +739,7 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
         order: 1;
       }
 
-      @include at-query($max, $xlarge) {
+      @include at-query($max, $preXXLarge) {
         &.grid__item--nav {
           order: 1;
         }
@@ -888,9 +892,12 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
 
     .site-header__customer {
       white-space: nowrap;
+      #customer_login_link {
+        text-transform: uppercase;
+      }
     }
 
-    @include at-query($max, $xlarge) {
+    @include at-query($max, $preXXLarge) {
       display: none;
       &.quick-nav-item--cart {
         display: flex;
@@ -908,7 +915,7 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
   margin: 0 auto;
   max-width: 100%;
 
-  @include at-query($min, $xlarge) {
+  @include at-query($min, $xxlarge) {
     margin-left: 0;
   }
 
