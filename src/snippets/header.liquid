@@ -10,9 +10,9 @@
 
 		<div class="grid--full grid--table main-nav">
 
-			<div class="grid__item large--five-tenths small--two-tenths grid__item--nav">
+			<div class="grid__item large--five-tenths xlarge-down--two-tenths grid__item--nav">
 				<nav class="nav-bar" role="navigation">
-					<div class="medium-down--hide">
+					<div class="xlarge-down--hide">
 						<ul class="site-nav mega-menu-nav" id="AccessibleNav">
 							{% for link in linklists[settings.main_linklist].links %}
 							 {% comment %}
@@ -29,73 +29,75 @@
 
 				        {%- if link.links != blank -%}
 								<div class="mega-menu-pane">
-									<div class="mega-menu-content mega-menu-level--{{ link.levels }}">
+									<div class="mega-menu-content-wrapper">
+										<div class="mega-menu-content mega-menu-level--{{ link.levels }}">
 
-						        {%- if link.levels > 1 -%}
+							        {%- if link.levels > 1 -%}
 
 
-	            				{%- for child_link in link.links -%}
-	            					<div>
-						              <ul>
-						              	<li>
-							                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
-							                  {{ child_link.title }}
-							                </a>
-							              </li>
-		                				{%- if child_link.links != blank -%}
-					                    {%- for grandchild_link in child_link.links -%}
-					                      <li>
-					                        <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
-					                          {{ grandchild_link.title }}
-					                        </a>
-					                      </li>
-					                    {%- endfor -%}
-		                				{%- endif -%}
-						              </ul>
-	            					</div>
-	            				{%- endfor -%}
+		            				{%- for child_link in link.links -%}
+		            					<div>
+							              <ul>
+							              	<li>
+								                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
+								                  {{ child_link.title }}
+								                </a>
+								              </li>
+			                				{%- if child_link.links != blank -%}
+						                    {%- for grandchild_link in child_link.links -%}
+						                      <li>
+						                        <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
+						                          {{ grandchild_link.title }}
+						                        </a>
+						                      </li>
+						                    {%- endfor -%}
+			                				{%- endif -%}
+							              </ul>
+		            					</div>
+		            				{%- endfor -%}
 
-	            				{%- if settings.mega_menu_bg_image != blank -%}
-	            					<img src="{{ settings.mega_menu_bg_image | img_url: 'master' }}" />
-	            				{%- endif -%}
+		            				{%- if settings.mega_menu_bg_image != blank -%}
+		            					<img src="{{ settings.mega_menu_bg_image | img_url: 'master' }}" />
+		            				{%- endif -%}
 
-						        {%- else -%}
+							        {%- else -%}
 
-	            				{%- for child_link in link.links -%}
-	            					<div>
-					                {%- capture posterUrl -%}nav-poster-{{ child_link.title | handle }}.png{%- endcapture -%}
-					                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}><img src="{{ posterUrl | asset_url }}">{{ child_link.title }}</a>
-					              </div>
-					             {%- endfor -%}
-						        {%- endif -%}
+		            				{%- for child_link in link.links -%}
+		            					<div>
+						                {%- capture posterUrl -%}nav-poster-{{ child_link.title | handle }}.png{%- endcapture -%}
+						                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}><img src="{{ posterUrl | asset_url }}">{{ child_link.title }}</a>
+						              </div>
+						             {%- endfor -%}
+							        {%- endif -%}
 
-						      </div>
+							      </div>
+							    </div>
 					      </div>
 				        {%- endif -%}
-							 </li>
+							</li>
 
 
-							 {% comment %}
-							 {% assign child_list_handle = link.title | handleize %}
-							 {% if linklists[child_list_handle].links != blank %}
-								 <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
-									 <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-									 <ul class="site-nav__dropdown">
-										 {% for childlink in linklists[child_list_handle].links %}
-											 <li{% if childlink.active %} class="site-nav--active"{% endif %}>
-												 <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-											 </li>
-										 {% endfor %}
-									 </ul>
-								 </li>
-							 {% else %}
-								 <li {% if link.active %}class="site-nav--active"{% endif %}>
-									 <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-								 </li>
-							 {% endif %}
-							 {% endcomment %}
-						 {% endfor %}
-					 </ul>
+							 	{% comment %}
+							 	{% assign child_list_handle = link.title | handleize %}
+							 	{% if linklists[child_list_handle].links != blank %}
+								 	<li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+									 	<a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+									 	<ul class="site-nav__dropdown">
+										 	{% for childlink in linklists[child_list_handle].links %}
+											 	<li{% if childlink.active %} class="site-nav--active"{% endif %}>
+												 	<a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+											 	</li>
+										 	{% endfor %}
+										</ul>
+								 	</li>
+							 	{% else %}
+								 	<li {% if link.active %}class="site-nav--active"{% endif %}>
+									 	<a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+								 	</li>
+							 	{% endif %}
+							 	{% endcomment %}
+						 	{% endfor %}
+					 	</ul>
 					 <!-- //site-nav -->
 					 {% comment %} --old sitenave with large dropdown
 						<!-- begin site-nav -->
@@ -122,11 +124,11 @@
 						<!-- //site-nav -->
 						{% endcomment %}
 					</div>
-					<div class="large--hide medium-down--show">
+					<div class="large--hide xlarge-down--show">
 						<div class="site-nav--mobile">
 							<button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
 								<!-- <span class="icon icon-hamburger" aria-hidden="true"></span> -->
-								<i class="fa fa-bars" aria-hidden="true"></i>
+								<i class="fal fa-bars" aria-hidden="true"></i>
 								<span class="fallback-text">{{ 'layout.navigation.menu' | t }}</span>
 							</button>
 						</div>
@@ -134,7 +136,7 @@
 				</nav>
 			</div>
 
-			<div class="grid__item large--two-tenths small-six-tenths grid__item--logo">
+			<div class="grid__item large--two-tenths xlarge-down--six-tenths grid__item--logo">
 				{% comment %}
 					Use the uploaded logo from theme settings if enabled.
 					Site name gets precedence with H1 tag on homepage, div on other pages.
@@ -158,19 +160,19 @@
 				{% endif %}
 			</div>
 
-			<div class="grid__item large--three-tenths small--two-tenths grid__item--quick">
+			<div class="grid__item large--three-tenths xlarge-down--two-tenths grid__item--quick">
 				<div class="quick-nav">
 
 					<div class="quick-nav-item">
-						<a href="mailto:info@prioriskincare.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						<a href="mailto:info@prioriskincare.com"><i class="fal fa-envelope" aria-hidden="true"></i></a>
 					</div>
 
 					<div class="quick-nav-item">
 						<label for="navsearch" class="icon-fallback-text search-toggle">
 							<!-- <span class="icon icon-search" aria-hidden="true"></span> -->
-							<i class="fa fa-search search-trigger" aria-hidden="true"></i>
+							<i class="fal fa-search search-trigger" aria-hidden="true"></i>
 							<!-- <span class="icon icon-x" aria-hidden="true"></span> -->
-							<i class="fa fa-times-circle-o search-close" aria-hidden="true"></i>
+							<i class="fal fa-times-circle search-close" aria-hidden="true"></i>
 							<span class="fallback-text">{{ 'general.search.submit' | t }}</span>
 						</label>
 					</div>
@@ -193,7 +195,7 @@
 						<div class="sd_dropdown-mini-cart">
               <div class="sd_dropdown-minibag" style="position:relative">
                 <!-- <span class="icon icon-cart" aria-hidden="true" style="font-size:24px;"></span> -->
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fal fa-shopping-bag" aria-hidden="true"></i>
                 {% if cart.item_count > 0 %}
                 	<span class="cart-items-count">{{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count | remove: "items" | remove: "item"}}</span>
               	{% endif %}
