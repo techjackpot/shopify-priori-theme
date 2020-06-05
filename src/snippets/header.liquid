@@ -5,7 +5,7 @@
     }
   {% endif %}
 </style>
-<header class="site-header" role="banner">
+<header class="site-header" role="banner" id="site-header">
 	<div class="wrapper">
 
 		<div class="grid--full grid--table main-nav">
@@ -56,9 +56,7 @@
 		            					</div>
 		            				{%- endfor -%}
 
-		            				{%- if settings.mega_menu_bg_image != blank -%}
-		            					<img src="{{ settings.mega_menu_bg_image | img_url: 'master' }}" />
-		            				{%- endif -%}
+		            				<img src="{{ link.title | handle | prepend: 'mega-menu-' | append: '.jpg' | asset_url }}" />
 
 							        {%- else -%}
 

@@ -432,3 +432,24 @@ Variants = (function() {
 
   return Variants;
 })();
+
+(function($) {
+
+  window.onscroll = function() {myFunction()};
+
+  // Get the header
+  var header = document.getElementById("site-header");
+
+  // Get the offset position of the navbar
+  // var sticky = header.offsetTop;
+
+  // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    var sticky = document.body.style.paddingTop.split('px')[0] || 0;
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+})(jQuery);

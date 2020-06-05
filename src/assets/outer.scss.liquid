@@ -703,6 +703,17 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
   background: #FFFFFF;
   color: #231F20;
   border-bottom: solid 2px #D8D3CB;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    & + .main-content {
+      padding-top: 80px;
+    }
+  }
+
   a { color: #231F20; }
 
   .grid--table {
@@ -814,9 +825,9 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
     }
     > img {
       position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
+      right: 32px;
+      top: 32px;
+      height: calc(100% - 64px);
       margin: 0;
       max-width: 30%;
       object-fit: cover;
@@ -836,6 +847,7 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
             a {
               font-weight: bold;
               font-size: 16px;
+              text-transform: uppercase;
             }
           }
         }
@@ -1513,6 +1525,9 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
   .js-drawer-open-right & {
     @include transform(translateX(-$drawerCartWidth));
   }
+
+  -webkit-transform: none;
+  will-change: auto;
 }
 
 .drawer__header {
@@ -1927,6 +1942,18 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
     #fsb_bar {
       font-family: $bodyFontStack !important;
       font-weight: 700 !important;
+    }
+  }
+}
+
+.complexes {
+  .list-complexes {
+    li {
+      background: #1a1a1a;
+      color: #ffffff;
+      &:hover {
+        color: #1a1a1a;
+      }
     }
   }
 }

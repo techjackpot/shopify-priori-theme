@@ -221,7 +221,7 @@
           "1583958056073": {
             "type": "carousel",
             "settings": {
-              "carousel": "skincare-upgrades"
+              "carousel": "homepage-carousel"
             }
           }
         },
@@ -229,7 +229,7 @@
           "1583958056073"
         ],
         "settings": {
-          "heading": "DISCOVER OUR SKINCARE UPGRADES",
+          "heading": "DISCOVER OUR TRAVEL AND TRIAL KITS",
           "intro": ""
         }
       },

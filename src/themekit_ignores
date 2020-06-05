@@ -3,8 +3,8 @@
 src/config/settings_data.json
 
 # globs
-*.png
-*.jpg
+# *.png
+# *.jpg
 *.map
 
 # regex
