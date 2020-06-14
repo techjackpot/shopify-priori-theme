@@ -3,9 +3,7 @@
 src/config/settings_data.json
 
 # globs
-# *.png
-# *.jpg
 *.map
 
 # regex
-/\.(txt|gif|bat)$/
+# /\.(txt|gif|bat)$/
