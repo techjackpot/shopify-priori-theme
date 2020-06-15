@@ -221,15 +221,22 @@
           "1583958056073": {
             "type": "carousel",
             "settings": {
-              "carousel": "homepage-carousel"
+              "carousel": "skincare-upgrades"
+            }
+          },
+          "1592235132310": {
+            "type": "carousel",
+            "settings": {
+              "carousel": ""
             }
           }
         },
         "block_order": [
-          "1583958056073"
+          "1583958056073",
+          "1592235132310"
         ],
         "settings": {
-          "heading": "DISCOVER OUR TRAVEL AND TRIAL KITS",
+          "heading": "Discover our skincare upgrades",
           "intro": ""
         }
       },
@@ -243,14 +250,14 @@
           "cat1_text": "Step Up Your Spring Cleaning With Our Adaptive Cleansers",
           "cat1_desc": "",
           "button_text_1": "SHOP NOW",
-          "cat2_url": "shopify:\/\/collections\/gifts-travel-kits",
-          "cat2_image": "shopify:\/\/shop_images\/priori_3_16.jpg",
-          "cat2_text": "Heading Out Of Town? Stock Up On Travel Essentials?",
+          "cat2_url": "shopify:\/\/collections",
+          "cat2_image": "shopify:\/\/shop_images\/PRIORI_November_3.jpg",
+          "cat2_text": "The Quadruple Threat When It Comes To Glowing Skin",
           "cat2_desc": "",
           "button_text_2": "SHOP NOW",
-          "cat3_url": "shopify:\/\/products\/q-sod-fx220-brightening-serum",
-          "cat3_image": "shopify:\/\/shop_images\/Q_SOD_Brightening_Serum_FA-04.jpg",
-          "cat3_text": "Beat Those Winter Blues With Some Moisture",
+          "cat3_url": "shopify:\/\/products\/lca-fx141-hand-and-body-replenisher",
+          "cat3_image": "shopify:\/\/shop_images\/h_B.jpg",
+          "cat3_text": "Give Your Hands The Hydration They Deserve",
           "cat3_desc": "",
           "button_text_3": "SHOP NOW"
         }

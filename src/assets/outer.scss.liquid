@@ -1067,6 +1067,11 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
   cursor: default;
   margin: 0 (-$gutter / 2) 0 0;
 
+  @include at-query($min, $xxlarge) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   li {
     margin: 0;
     display: block;
