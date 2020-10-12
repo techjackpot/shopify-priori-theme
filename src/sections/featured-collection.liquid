@@ -5,6 +5,7 @@
 {%- assign collection = collections[section.settings.collection] -%}
 
 {% for product in collection.products limit: 6 %}
+<script type='application/json' class='bold-product-json'>{{ product | json }}</script>
   <a href="{{ product.url | within: collection }}">
 
     {% if product.featured_image != blank %}
@@ -22,7 +23,7 @@
         {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
       {% else %}
         {{ 'products.product.on_sale' | t }}
-        {{ product.price | money }}
+        <span class="money" data-product-id="{{ product.id }}">{{ product.price | money }}</span>
       {% endif %}
 
     {% else %}
@@ -31,7 +32,7 @@
         {%- assign price = product.price | money -%}
         {{ 'products.product.from_text_html' | t: price: price }}
       {% else %}
-        {{ product.price | money }}
+        <span class="money" data-product-id="{{ product.id }}">{{ product.price | money }}</span>
       {% endif %}
 
     {% endif %}

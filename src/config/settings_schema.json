@@ -221,7 +221,7 @@
           "en": "Bottom Text"
         },
         "default": {
-          "en": "<p>Copyright 2020 SkinSciPac, LLC. All rights reserved. <a href=\"/pages/privacy-and-terms\">Privacy + Terms</a></p>"
+          "en": "<p>Copyright 2020 SkinSciPac, LLC. All rights reserved. <a href=\"\/pages\/privacy-and-terms\">Privacy + Terms<\/a><\/p>"
         }
       }
     ]

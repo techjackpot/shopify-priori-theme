@@ -120,7 +120,7 @@
 							<label for="Price" class="invisible">Price</label>
 							<span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
 							<span id="ProductPrice" class="h2" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
-								{{ current_variant.price | money }}
+								<span class="money" data-product-id="{{ product.id }}">{{ current_variant.price | money }}</span>
 							</span>
 
             </div>

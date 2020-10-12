@@ -178,6 +178,7 @@
         See the snippet 'product-grid-item' for the layout.
       {% endcomment %}
       {% for product in collection.products %}
+<script type='application/json' class='bold-product-json'>{{ product | json }}</script>
 
         {% include 'product-grid-item' %}
 

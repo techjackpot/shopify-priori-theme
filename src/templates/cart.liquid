@@ -1,3 +1,7 @@
+
+<!-- spurit_stp-added -->
+
+<!-- /spurit_stp-added -->
 <!-- /templates/cart.liquid -->
 {% comment %}
 
@@ -84,7 +88,7 @@
 			            <td data-label="{{ 'cart.label.price' | t }}">
 			              <span class="h3">
 
-<span class="saso-cart-item-price" data-key="{{item.key}}">{{ item.price | money }}</span>
+<span class="saso-cart-item-price" data-key="{{item.key}}"><span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.price | money }}</span>
 
 			              </span>
 			            </td>
@@ -93,11 +97,11 @@
 			            </td>
 			            <td data-label="{{ 'cart.label.total' | t }}" class="text-right">
 			              {% if item.original_line_price != item.line_price %}
-			                <span class="cart-item__original-price"><s>{{ item.original_line_price | money }}</s></span>
+			                <span class="cart-item__original-price"><s><span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.original_line_price | money }}</s></span>
 			              {% endif %}
 			              <span class="h3">
 
-<span class="saso-cart-item-line-price" data-key="{{item.key}}">{{ item.line_price | money }}</span>
+<span class="saso-cart-item-line-price" data-key="{{item.key}}"><span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total_2" data-item-key="{{item.key}}" style="display:none !important;"></span>{{ item.line_price | money }}</span>
 
 			              </span>
 			              {% for discount in item.discounts %}
@@ -120,7 +124,7 @@
 			        <p>
 			          <span class="cart__subtotal-title"><span id='revy-cart-subtotal-label'>{{ 'cart.general.subtotal' | t }}</span></span>
 			          <span class="h3 cart__subtotal">
-<span class="saso-cart-original-total"><span id='revy-cart-subtotal-price'>{{ cart.total_price | money }}</span></span>
+<span class="saso-cart-original-total"><span id='revy-cart-subtotal-price'><span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_total" style="display:none !important;"></span>{{ cart.total_price | money }}</span></span>
 <span class="saso-cart-total"></span>
 </span>
                       <br><p class="cart-attribute__field">

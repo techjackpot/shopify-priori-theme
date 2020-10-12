@@ -33,7 +33,7 @@
            
                       
                      
-						<span data-product-price>{{ current_variant.price | money }}</span>
+						<span data-product-price><span class="money" data-product-id="{{ product.id }}">{{ current_variant.price | money }}</span></span>
                       
                      
 
@@ -41,7 +41,7 @@
 							<span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
 							<s data-compare-price>
 								{% if current_variant.compare_at_price > current_variant.price %}
-									{{ current_variant.compare_at_price | money }}
+									<span class="bold-compare-at-money" data-product-id="{{ product.id }}">{{ current_variant.compare_at_price | money }}</span>
 								{% endif %}
 							</s>
 						{% endif %}
@@ -125,7 +125,7 @@
                 {% comment %}
                   Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
                 {% endcomment %}
-                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - <span class="money" data-product-id="{{ product.id }}">{{ variant.price | money_with_currency }}</span></option>
 
               {% else %}
                 <option disabled="disabled">
@@ -139,7 +139,7 @@
 
             
           <span id="ProductPrice" class="h2 hide-mobile" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}"> 
-            {{ current_variant.price | money }}
+            <span class="money" data-product-id="{{ product.id }}">{{ current_variant.price | money }}</span>
             </span>
         
             
@@ -148,7 +148,7 @@
           {% if product.compare_at_price_max > product.price %}
             <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
             <p id="ComparePrice">
-              {{ 'products.product.compare_at' | t }} {{ current_variant.compare_at_price | money }}
+              {{ 'products.product.compare_at' | t }} <span class="bold-compare-at-money" data-product-id="{{ product.id }}">{{ current_variant.compare_at_price | money }}</span>
             </p>
           {% endif %}
 

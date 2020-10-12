@@ -132,23 +132,23 @@
             "type": "slide",
             "settings": {
               "enabled": true,
-              "slide_bg_image": "shopify:\/\/shop_images\/home-slider.jpg",
+              "slide_bg_image": "shopify:\/\/shop_images\/banner_f7a904f0-7809-4c18-8209-d12255bf9808.jpg",
               "slide_bg_video": "",
               "slide_bg_color": "#ffffff",
               "slide_bg_opacity": 100,
-              "content_bg_image": "shopify:\/\/shop_images\/bg-shape.png",
+              "content_bg_image": "",
               "content_bg_color": "rgba(0,0,0,0)",
               "content_bg_opacity": 100,
               "content_color": "dark",
-              "heading": "<p><strong>SCIENCE-BASED<\/strong><\/p>\n<p><strong>SOLUTIONS<\/strong><\/p>",
+              "heading": "<p>UNVEI<strong>LED <\/strong><\/p>\n<p>LED MASK<\/p>",
               "line_break": true,
-              "subhead": "<p><span style=\"text-decoration: none;\">For your most radiant skin.<\/span><\/p>",
+              "subhead": "<p>Clinically proven to improve<\/p>\n<p>skin hydration, texture<\/p>\n<p>and signs of aging<\/p>",
               "button_label": "SHOP NOW",
-              "link": "shopify:\/\/collections\/all",
+              "link": "shopify:\/\/pages\/unveiledmask",
               "content_position": "right",
-              "content_padding_x": 160,
-              "content_padding_y": 175,
-              "content_margin_x": 70,
+              "content_padding_x": 0,
+              "content_padding_y": 30,
+              "content_margin_x": 80,
               "content_margin_y": 0
             }
           }
@@ -236,7 +236,7 @@
           "1592235132310"
         ],
         "settings": {
-          "heading": "Discover our skincare upgrades",
+          "heading": "Discover our best sellers",
           "intro": ""
         }
       },
@@ -245,19 +245,19 @@
         "settings": {
           "heading": "",
           "intro": "",
-          "cat1_url": "shopify:\/\/collections\/facial-cleansers",
-          "cat1_image": "shopify:\/\/shop_images\/PRIORI_2002_EW_6.jpg",
-          "cat1_text": "Step Up Your Spring Cleaning With Our Adaptive Cleansers",
+          "cat1_url": "shopify:\/\/collections\/mineral-skincare",
+          "cat1_image": "shopify:\/\/shop_images\/mins.jpg",
+          "cat1_text": "Protect And Perfect Your Skin With SPF And Natural Coverage",
           "cat1_desc": "",
           "button_text_1": "SHOP NOW",
-          "cat2_url": "shopify:\/\/collections",
-          "cat2_image": "shopify:\/\/shop_images\/PRIORI_November_3.jpg",
-          "cat2_text": "The Quadruple Threat When It Comes To Glowing Skin",
+          "cat2_url": "shopify:\/\/collections\/trios",
+          "cat2_image": "shopify:\/\/shop_images\/ff.jpg",
+          "cat2_text": "Convenient & Affordable, A One-Stop Shop for Your Skincare Needs",
           "cat2_desc": "",
           "button_text_2": "SHOP NOW",
-          "cat3_url": "shopify:\/\/products\/lca-fx141-hand-and-body-replenisher",
-          "cat3_image": "shopify:\/\/shop_images\/h_B.jpg",
-          "cat3_text": "Give Your Hands The Hydration They Deserve",
+          "cat3_url": "shopify:\/\/products\/ttc-fx360-natural-enzyme-peel-mask",
+          "cat3_image": "shopify:\/\/shop_images\/peel.jpg",
+          "cat3_text": "Give Your Skin A Natural Peel With Pumpkin And Papaya Enzymes",
           "cat3_desc": "",
           "button_text_3": "SHOP NOW"
         }
@@ -276,7 +276,7 @@
           "background_color": "#231f20",
           "color": "light",
           "heading": "WE ARE ADAPTIVE SKINCARE",
-          "text": "<p>Multi-Functional Ingredient technology to provide your skin with exactly what it needs. Your skin decides what to take – all day, every day – for its best, most radiant face-first results. <\/p>",
+          "text": "<p>Regardless of gender, age or ethnicity, PRIORI science provides your skin with exactly what it needs when it needs it. All day, every day. <\/p> \n<p>We invented it. We deliver it. <\/p>",
           "button_label": "EXPLORE THE PRIORI DIFFERENCE",
           "button_link": "shopify:\/\/pages\/adaptive-skincare"
         }

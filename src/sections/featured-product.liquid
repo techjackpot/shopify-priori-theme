@@ -1,4 +1,6 @@
 {%- assign product = all_products[section.settings.product] -%}
+
+<script type='application/json' class='bold-product-json'>{{ product | json }}</script>
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
@@ -86,7 +88,7 @@
           <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
           <s data-compare-price>
             {% if current_variant.compare_at_price > current_variant.price %}
-              {{ current_variant.compare_at_price | money }}
+              <span class="bold-compare-at-money" data-product-id="{{ product.id }}">{{ current_variant.compare_at_price | money }}</span>
             {% endif %}
           </s>
         {% endif %}

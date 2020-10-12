@@ -13,6 +13,7 @@
       <div class="shop-carousel">
 
         {% for product in collections[block.settings.carousel].products %}
+<script type='application/json' class='bold-product-json'>{{ product | json }}</script>
 
           {% include 'product-carousel-item' %}
 
