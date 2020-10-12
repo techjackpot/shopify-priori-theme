@@ -32,17 +32,20 @@
 	  			</div>
 
 		  		<div class="slide-content-text slide-content-text--{{ block.settings.content_color }}" style="padding: {{ block.settings.content_padding_y }}px {{ block.settings.content_padding_x }}px;">
-		  			{% if block.settings.heading %}
+		  			{% if block.settings.heading != blank %}
 		  				<div class="slide-content-heading">{{ block.settings.heading }}</div>
 		  			{% endif %}
 		  			{% if block.settings.line_break %}
 		  				<hr />
 		  			{% endif %}
-		  			{% if block.settings.subhead %}
-		  				<div class="slide-content-subhead">{{ block.settings.subhead }}</div>
+		  			{% if block.settings.subhead != blank %}
+		  				<div class="slide-content-subhead" style="font-size: {{ block.settings.subhead_size }}px;">{{ block.settings.subhead }}</div>
 		  			{% endif %}
 		  			{% if block.settings.button_label != blank %}
 		  				<a class="btn slide-content-button" href="{{ block.settings.link | default: '#' }}">{{ block.settings.button_label }}</a>
+		  			{% endif %}
+		  			{% if block.settings.bottomtext != blank %}
+		  				<div class="slide-content-bottomtext" style="font-size: {{ block.settings.bottomtext_size }}px;">{{ block.settings.bottomtext }}</div>
 		  			{% endif %}
 		  		</div>
 		  	</div>
@@ -191,7 +194,7 @@ $(document).ready(function(){
 		      ]
 		    },
 		    {
-		      "type": "richtext",
+		      "type": "html",
 		      "id": "heading",
 		      "label": "Heading",
 		      "default": "<p>Heading goes here...</p>"
@@ -209,6 +212,16 @@ $(document).ready(function(){
 		      "default": "<p>Description goes here...</p>"
 		    },
 				{
+				  "type": "range",
+				  "id": "subhead_size",
+				  "min": 8,
+				  "max": 32,
+				  "step": 1,
+				  "unit": "px",
+				  "label": "Description Font Size(px)",
+				  "default": 12
+				},
+				{
 		      "type": "text",
 		      "id": "button_label",
 		      "label": "Button Label"
@@ -218,6 +231,22 @@ $(document).ready(function(){
 		      "id": "link",
 		      "label": "Link"
 		    },
+		    {
+		      "type": "richtext",
+		      "id": "bottomtext",
+		      "label": "Bottom Description",
+		      "default": "<p>Description goes here...</p>"
+		    },
+				{
+				  "type": "range",
+				  "id": "bottomtext_size",
+				  "min": 8,
+				  "max": 32,
+				  "step": 1,
+				  "unit": "px",
+				  "label": "Bottom Description Font Size(px)",
+				  "default": 12
+				},
 	      {
 	        "type": "header",
 	        "content": "Position"
