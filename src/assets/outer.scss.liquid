@@ -911,6 +911,10 @@ div.snize-ac-results span.snize-title { font-weight: normal !important; }
 
     @include at-query($max, $preXXLarge) {
       display: none;
+      &.quick-nav-item--search {
+        display: flex;
+        margin-right: 0;
+      }
       &.quick-nav-item--cart {
         display: flex;
         margin-right: 0;
