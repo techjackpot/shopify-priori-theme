@@ -272,7 +272,7 @@
       "regular_price": "Regular price"
     },
     "product": {
-      "sold_out": "Coming Soon",
+      "sold_out": "Sold Out",
       "on_sale": "On Sale",
       "on_sale_from_html": "<strong>On Sale<\/strong> from {{ price }}",
       "unavailable": "Unavailable",

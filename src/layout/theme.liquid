@@ -21,6 +21,15 @@
   {% if page_description %}
   <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
+  
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZBQGVZ');</script>
+<!-- End Google Tag Manager -->
+  
 {% comment %}  
   <!-- Global site tag (gtag.js) - Google Ads: 790854851 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-790854851"></script>
@@ -105,12 +114,21 @@ src="https://ct.pinterest.com/v3/?tid=2612908603651&noscript=1" />
 {% render 'gsf-conversion-pixels' %}
 
   {% render 'shogun-head' %}
+  
+  <script type="text/javascript" src="https://beauty.magnet.com/widget/initiator.min.js" defer="" data-brand-id="dCA0yYZuYCrM"></script>
+
 </head>
 
 {% comment %}
   Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZBQGVZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
   <div id="NavDrawer" class="drawer drawer--left">
     <div class="drawer__header">
       <div class="drawer__title h3">{{ 'layout.drawers.browse' | t }}</div>
@@ -350,6 +368,10 @@ jQuery.ajax( {
   
 
 
+
+<!-- **BEGIN** Hextom FSB Integration // Main Include - DO NOT MODIFY -->
+    {% render 'hextom_fsb_main', product: product, customer: customer %}
+    <!-- **END** Hextom FSB Integration // Main Include - DO NOT MODIFY -->
 </body>
 </html>
 
