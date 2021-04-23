@@ -4,10 +4,13 @@
 
 		<div class="banner banner-home" id="banner-{{ block.id }}">
 			<div class="banner-background" style="background-color: {{ block.settings.slide_bg_color | default: 'transparent' }}; opacity: {{ block.settings.slide_bg_opacity | divided_by: 100.00 }};">
+			{% assign slide_mobile_bg_image = block.settings.slide_mobile_bg_image | default: block.settings.slide_bg_image %}
 		  {% if block.settings.slide_bg_image %}
 		  	<img class="banner-background_img" src="{{ block.settings.slide_bg_image | img_url: '1920x' }}" alt="">
 		  {% endif %}
-
+		  {% if slide_mobile_bg_image %}
+		  	<img class="banner-mobile-background_img" src="{{ slide_mobile_bg_image | img_url: '480x' }}" alt="">
+			{% endif %}
 		  {% if block.settings.slide_bg_video != blank %}
 				<video src="{{ block.settings.slide_bg_video }}" class="banner-background_video" autoplay loop muted></video>
 	    {% endif %}
@@ -108,6 +111,11 @@ $(document).ready(function(){
 						"ja": "画像",
 						"pt-BR": "Imagem"
 					}
+				},
+				{
+					"type": "image_picker",
+					"id": "slide_mobile_bg_image",
+					"label": "Mobile"
 				},
 				{
 					"type": "text",
