@@ -8,4 +8,4 @@ production:
   theme_id: ${SHOPIFY_PROD_THEMEID}
   store: ${SHOPIFY_STORE}
   directory: src
-  timeout: 180s
+  timeout: 600s
