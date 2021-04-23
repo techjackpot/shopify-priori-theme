@@ -15,6 +15,7 @@
 {% endif %}
 
 <div class="item">
+  <script type='application/json' class='bold-product-json'>{{ product | json }}</script>
   <a href="{{ product.url | within: collection }}">
     <img src="{{ product.featured_image.src | img_url: '600x600' }}" alt="{{ product.featured_image.alt | escape }}">
   </a>
