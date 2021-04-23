@@ -96,6 +96,7 @@ $(document).ready(function(){
   // init Flickity if mulitple cells
   if ( hasMultipleCells ) {
     $('.product-carousel').flickity({
+      imagesLoaded: true,
       wrapAround: true,
       pageDots: false
     });
@@ -117,6 +118,7 @@ $(document).ready(function(){
     .trigger( "change" );
 
     $('.product-single__thumbnails').flickity({
+      imagesLoaded: true,
       wrapAround: false,
       pageDots: false,
       asNavFor: '.product-carousel',
